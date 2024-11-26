@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@azure/keyvault-secrets": "^4.9.0",
     "axios": "^1.7.7",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
