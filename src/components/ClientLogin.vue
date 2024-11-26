@@ -28,7 +28,7 @@
 
 <script>
 
-const API_BASE_URL = process.env.VUE_APP_API_BASE_URL;
+const API_BASE_URL = process.env.VUE_APP_ROOT_URL;
 
 import axios from 'axios';
 export default {
