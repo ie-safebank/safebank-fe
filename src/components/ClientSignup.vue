@@ -63,6 +63,7 @@ export default {
         });
         /*const response = await axios.post('http://localhost:5000/users', userData);*/ /* Hardcoded for local */
 
+
         console.log('Signup response:', response.data);
         alert('Signup successful');
 

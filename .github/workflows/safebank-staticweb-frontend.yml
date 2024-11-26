@@ -1,0 +1,136 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: safebank-frontend
+
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  KEY_VAULT_NAME_DEV: safebank-kv-dev
+  KEY_VAULT_NAME_UAT: safebank-kv-uat
+  KEY_VAULT_NAME_PROD: safebank-kv-prod
+
+jobs:
+  build-dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build -- --mode development --dest dist-dev ## this command will build the vue.js app using .env.development variables into the dest-div/ folder
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-app-dev
+          path: dist-dev/
+
+  build-uat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build -- --mode uat --dest dist-uat ## this command will build the vue.js app using .env.production variables into the dest-uat/ folder
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-app-uat
+          path: dist-uat/
+
+  deploy-dev:
+    # if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    needs: build-dev
+    environment:
+      name: 'DEV'
+      
+    steps:
+
+      - name: "Log in to azure"
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: "Get registry credentials from vault"
+        uses: Azure/cli@v2.1.0
+        with:
+          inlineScript: |
+            echo "WEBAPP_TOKEN_DEV=$(az keyvault secret show --name swa-token --vault-name ${{ env.KEY_VAULT_NAME_DEV }} --query value -o tsv)" >> $GITHUB_ENV
+
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: node-app-dev
+          path: ./dist-dev
+      
+      - name: 'Deploy to Azure Static Web App'
+        id: deploy-to-static-webapp
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          action: "upload"
+          app_location: "./dist-dev"
+          azure_static_web_apps_api_token: ${{ env.WEBAPP_TOKEN_DEV }}
+    
+
+  deploy-uat:
+    #if: (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main') || (github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    needs: build-uat
+    environment:
+      name: 'UAT'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+
+      - name: "Log in to azure"
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: "Get registry credentials from vault"
+        uses: Azure/cli@v2.1.0
+        with:
+          inlineScript: |
+            echo "WEBAPP_TOKEN_UAT=$(az keyvault secret show --name swa-token --vault-name ${{ env.KEY_VAULT_NAME_UAT }} --query value -o tsv)" >> $GITHUB_ENV
+
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: node-app-uat
+          path: ./dist-uat
+      
+      - name: 'Deploy to Azure Static Web App'
+        id: deploy-to-static-webapp
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          action: "upload"
+          app_location: "./dist-uat"
+          azure_static_web_apps_api_token: ${{ env.WEBAPP_TOKEN_UAT }}
+
+
+        
+        
