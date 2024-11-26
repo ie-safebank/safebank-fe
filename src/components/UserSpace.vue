@@ -272,16 +272,18 @@ export default {
 
     //GET transactions function
     RESTgetUserTransactions() {
-      const path = `${process.env.VUE_APP_API_BASE_URL}/accounts/${accountId}`;
+      const path = `${process.env.VUE_APP_API_BASE_URL}/userspace/${this.username}/transactions`;
       axios
-        .get(path)
-        .then((response) => {
-          this.transactions = response.data.transactions;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
+          .get(path)
+          .then((response) => {
+              // Populate the transactions array with the response data
+              this.transactions = response.data.transactions;
+          })
+          .catch((error) => {
+              console.error("Error fetching transactions:", error);
+          });
+  },
+
 
 
     // Update function
