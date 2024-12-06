@@ -455,6 +455,14 @@ export default {
           }, 3000);
         })
         .catch((error) => {
+          // For message alert
+          this.message = error.message;
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
           console.error(error);
           this.RESTgetAccounts();
         });
