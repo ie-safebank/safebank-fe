@@ -590,6 +590,7 @@ export default {
       this.createAccountForm.name = "";
       this.createAccountForm.currency = "";
       this.createAccountForm.username = "";
+      this.createAccountForm.country = "";
       this.editAccountForm.id = "";
       this.editAccountForm.name = "";
       this.editAccountForm.country = "";

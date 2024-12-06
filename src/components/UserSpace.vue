@@ -253,13 +253,13 @@ export default {
     };
   },
   methods: {
-    /***************************************************
+     /***************************************************
      * RESTful requests
      ***************************************************/
 
     //GET accounts function
     RESTgetUserAccounts() {
-      const path = `${process.env.VUE_APP_API_BASE_URL}/userspace/${this.username}/accounts`;
+      const path = `${process.env.VUE_APP_ROOT_URL}/userspace/${this.username}/accounts`;
       axios
         .get(path)
         .then((response) => {
@@ -272,7 +272,7 @@ export default {
 
     //GET transactions function
     RESTgetUserTransactions() {
-      const path = `${process.env.VUE_APP_API_BASE_URL}/accounts/${accountId}`;
+      const path = `${process.env.VUE_APP_ROOT_URL}/userspace/${this.username}/transactions`;
       axios
         .get(path)
         .then((response) => {
@@ -283,10 +283,9 @@ export default {
         });
     },
 
-
     // Update function
     RESTupdateAccount(payload, accountId) {
-      const path = `${process.env.VUE_APP_API_BASE_URL}/accounts/${accountId}`;
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts/${accountId}`;
       axios
         .put(path, payload)
         .then((response) => {
@@ -308,7 +307,7 @@ export default {
 
     // Delete account
     RESTdeleteAccount(accountId) {
-      const path = `${process.env.VUE_APP_API_BASE_URL}/accounts/${accountId}`;
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts/${accountId}`;
       axios
         .delete(path)
         .then((response) => {
@@ -328,27 +327,40 @@ export default {
         });
     },
 
-    // Transfer Money1
-    RESTtransferMoney(payload) {
-      const path = `${process.env.VUE_APP_API_BASE_URL}/userspace/${this.username}/transfer`;
+    // Transfer Money
+    RESTtransferMoney(payload){
+      const path = `${process.env.VUE_APP_ROOT_URL}/userspace/${this.username}/transfer`;
       axios
         .put(path, payload)
         .then((response) => {
-          if (response.status === 200) {
-            // Refresh account and transaction data
-            this.RESTgetUserAccounts();
-            this.RESTgetUserTransactions();
-          } else {
-            console.error("Unexpected response:", response);
-          }
+          // show updated account
+          this.RESTgetUserAccounts();
+          this.RESTgetUserTransactions();
+
+          // For message alert
+          this.message = "Transfer Made Successfuly!";
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
         })
         .catch((error) => {
-          console.error("Transfer Error:", error);
+
+          // For message alert
+          this.message = "Transfer Not Completed.";
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
+
+          console.error(error);
+          this.RESTgetUserAccounts();
         });
     },
-
-
-
 
     // Handle submit event for edit account
     onSubmitUpdate(e) {
