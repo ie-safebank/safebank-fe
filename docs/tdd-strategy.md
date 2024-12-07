@@ -1,10 +1,37 @@
 # TDD/BDD Strategy
 
-Our team adopted **Behavior-Driven Development (BDD)** by defining system behaviors through concise, user-centric scenarios written in the "Given, When, Then" format. To ensure full coverage, we implemented unit and functional tests using **Pytest** and extended functional testing with **Postman**, leveraging Postbot. These tests were integrated into our **CI/CD pipeline**, ensuring high-quality results from development to deployment. Below are the tests implemented for specific user stories:
+1. **Test-Driven Development (TDD)**
+
+![TDD Strategy](./images/tdd-cycle.png)
+
+1. Write tests
+2. Tests Fail
+3. Write Code
+4. Tests Pass
+5. Refactor
+
+With this cycle, our team was able to produce clean, maintainable code. Saving time on bugs by catching them in early development, and ensure all feature requirements were met.
+
+2. **Behavior-Driven Development (BDD)**
+
+- Defined system behaviors in clear scenarios defined in a "Given, When, Then" Format.
+
+3.  **Unit Tests**:
+
+- Developed with **Pytest**, focusing on validating individual components.
+
+4.  **Functional Tests**:
+
+- Expanded with **Postman**, leveraging **Postbot** to validate end-to-end scenarios (e.g., user login, account management, and transaction processing) in the UAT environment.
+
+5.  **Integration with CI/CD**:
+
+- Functional tests are part of build and deployment workflows, with Github status checks configured so that only pull requests that pass all tests can be merged to main.
+- Ensure high quality code from development to deployment.
 
 ---
 
-## Functional Tests in `safebank-be/tests/functional/test_routes.py`
+Below are some examples of tests implemented for specific user storie found in `safebank-be/tests/functional/test_routes.py`:
 
 | **User Story**                                                                                      | **Acceptance Criteria**                                                                                                                                                                                                                                                                              | **Related Tests**                                                                                                                                                                                                                                                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
