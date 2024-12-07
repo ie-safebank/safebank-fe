@@ -1,16 +1,18 @@
-# TDD/BDD Strategy
+# TDD/BDD Strategy 🧪
 
 ## 1. **Test-Driven Development (TDD)**
 
-1. Write tests
-2. Tests Fail
-3. Write Code
-4. Tests Pass
-5. Refactor
+Test-Driven Development (TDD) follows a cycle of:
 
-By following this cycle, our team was able to produce clean, maintainable code. This approach helped us catch bugs early in the development process, saving time, and ensuring that all feature requirements were met.
+1. Write tests 📝
+2. Tests fail ❌
+3. Write code 🧑‍💻
+4. Tests pass ✅
+5. Refactor 🔄
 
 ## 2. **Behavior-Driven Development (BDD)**
+
+We define system behaviors using the "Given, When, Then" format. This ensures shared understanding of the system behavior and aligns both developers and stakeholders. 🧑‍🤝‍🧑
 
 - We defined system behaviors in clear scenarios using the "Given, When, Then" format. This approach improved communication between developers and non-technical stakeholders, ensuring everyone had a shared understanding of the system's behavior.
 
@@ -22,7 +24,7 @@ By following this cycle, our team was able to produce clean, maintainable code. 
 
 - Functional tests were expanded using **Postman**, with **Postbot** utilized to validate end-to-end scenarios (e.g., user login, account management, and transaction processing) in the User Acceptance Testing (UAT) environment.
 
-## 5. **Integration with CI/CD**
+## 5. **Integration with CI/CD** 🔗
 
 - Functional tests are integrated into the build and deployment workflows. We use GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
 - This integration ensures high-quality code throughout the development lifecycle, from development to deployment.
