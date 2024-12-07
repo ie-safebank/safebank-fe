@@ -10,9 +10,7 @@ Test-Driven Development (TDD) follows a cycle of:
 4. Tests pass ✅
 5. Refactor 🔄
 
-## 2. **Behavior-Driven Development (BDD)**
-
-We define system behaviors using the "Given, When, Then" format. This ensures shared understanding of the system behavior and aligns both developers and stakeholders. 🧑‍🤝‍🧑
+## 2. **Behavior-Driven Development (BDD)** 🧑‍🤝‍🧑
 
 - We defined system behaviors in clear scenarios using the "Given, When, Then" format. This approach improved communication between developers and non-technical stakeholders, ensuring everyone had a shared understanding of the system's behavior.
 
