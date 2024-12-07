@@ -62,7 +62,6 @@ Explore the sections below to navigate through the various aspects of our projec
 ---
 
 ### **Software Quality Assurance**
-- [Test Plan](test-plan.md)
 - [Continuous Integration (CI/CD)](ci-cd-strategy.md)
 - [Test-Driven Development](tdd-strategy.md)
 

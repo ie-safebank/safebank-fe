@@ -573,6 +573,7 @@ export default {
         .then((response) => {
           this.RESTgetUsers();
           this.RESTgetAccounts();
+          this.RESTgetTransactions();
           // For message alert
           this.message = "User Deleted succesfully!";
           // To actually show the message
