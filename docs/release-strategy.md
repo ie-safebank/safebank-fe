@@ -15,14 +15,14 @@ SafeBank adopts a DTAP (Development, Testing, Acceptance, Production) model, ena
 ### 3.1. Development Environment (DEV)
 **Purpose:** Supports feature development and testing by developers.  
 **Key Features:**
-- Hosted in the SAFEBANK-DEV Azure resource group with contributor permissions.
+- Hosted in the BCSAI-DEVOPS-STUDENTS-A-DEV Azure resource group with contributor permissions.
 - CI/CD pipelines trigger automated builds and deployments after feature branch pushes.
 - Integrated with Azure Monitor to capture metrics and logs for immediate feedback.
 
 ### 3.2. Testing/UAT Environment (UAT)
 **Purpose:** Mimics production for final validation by stakeholders.  
 **Key Features:**
-- Hosted in the SAFEBANK-UAT Azure resource group with reader permissions.
+- Hosted in the BCSAI-DEVOPS-STUDENTS-A-UAT Azure resource group with reader permissions.
 - Deployments triggered by pull request merges to the main branch.
 - Integrated with automated functional and integration testing using tools like Postman.
 - Supports stakeholder feedback loops to validate user stories and non-functional requirements.
@@ -30,7 +30,7 @@ SafeBank adopts a DTAP (Development, Testing, Acceptance, Production) model, ena
 ### 3.3. Production Environment (PROD)
 **Purpose:** Hosts the final stable version for end-users.  
 **Key Features:**
-- Hosted in the SAFEBANK-PROD Azure resource group with high availability and reliability configurations.
+- Hosted in the BCSAI-DEVOPS-STUDENTS-A-PROD Azure resource group with high availability and reliability configurations.
 - Utilizes strict access policies and advanced monitoring through Azure Application Insights.
 
 ### 3.4. Environment-Specific Configurations
