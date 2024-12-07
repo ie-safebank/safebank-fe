@@ -40,7 +40,8 @@ Explore the sections below to navigate through the various aspects of our projec
   - [Infrastructure Architecture Design & Environments Design](infrastructure-architecture.md)
   - [Release Strategy](release-strategy.md)
 - **Software Modeling**
-  - [Use Case and Sequential Models](use-case-model.md)
+  - [Use Case](use-case-model.md)
+  - [Sequential Models](sequential.md)
   - [Entity Relationship Diagram](entity-relationship-diagram.md)
   - [Data Flow Diagram](data-flow-diagram.md)
   - [12-Factor App Design](twelve-factor-design.md)
