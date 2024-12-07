@@ -1,6 +1,6 @@
 # Use Case Diagram 
 
-![Use Case Diagram](images/vision-board.png)
+![Use Case Diagram](images/usecase.png)
 
 
 ## Actors
