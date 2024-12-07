@@ -26,7 +26,7 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ### **Requirements**
 - **Functional Requirements**
-  - [Admin Portal Requirements](admin-portal.md)
+  - [list of functional requirements](functional-requirements.md)
   - [User Portal Requirements](user-portal.md)
 - **Non-Functional Requirements**
   - [Authentication and Security](authentication-security.md)
