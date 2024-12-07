@@ -1,4 +1,4 @@
-# TDD/BDD Strategy 🧪
+# Testing Strategy 🧪
 
 ## 1. **Test-Driven Development (TDD)**
 
