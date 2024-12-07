@@ -21,7 +21,7 @@ IE-Safebank monitors its dependencies through DependaBot. DependaBot is a tool d
   To accomplish this, IE-Safebank leverages Dependabot, a tool directly integrated into GitHub. Dependabot scans for vulnerabilities in dependencies that attackers could exploit. These vulnerabilities are categorized as ‘low,’ ‘medium,’ ‘high,’ or ‘critical,’ enabling prioritization for remediation.
 
 - **Address Vulnerabilities Effectively**  
-  While we prioritize fixing high and critical vulnerabilities, due to time constraints, ‘medium’ and ‘low’ dependency alerts were not addressed during the initial implementation. This approach helps ensure resources are focused on addressing the most significant risks.
+  While we prioritize fixing high and critical vulnerabilities, due to time constraints, 'high', ‘medium’ and ‘low’ dependency alerts were not addressed during the initial implementation. This approach helps ensure resources are focused on addressing the most significant risks.
 
 - **Keep Dependencies Up-to-Date**  
   Having dependencies up-to-date is critical for preventing potential exploits. Outdated libraries are often targeted by attackers for eavesdropping, cross-site scripting (XSS), and other attacks. Dependabot ensures libraries are regularly reviewed and updated to mitigate these risks.
