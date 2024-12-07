@@ -1,6 +1,6 @@
 # Testing Strategy 🧪
 
-## 1. **Test-Driven Development (TDD)**
+## Test-Driven Development (TDD)
 
 Test-Driven Development (TDD) follows a cycle of:
 
@@ -10,26 +10,26 @@ Test-Driven Development (TDD) follows a cycle of:
 4. Tests pass ✅
 5. Refactor 🔄
 
-## 2. **Behavior-Driven Development (BDD)** 🧑‍🤝‍🧑
+## Behavior-Driven Development (BDD) 🧑‍🤝‍🧑
 
 - We defined system behaviors in clear scenarios using the "Given, When, Then" format. This approach improved communication between developers and non-technical stakeholders, ensuring everyone had a shared understanding of the system's behavior.
 
-## 3. **Unit Tests**
+## Unit Tests
 
 - Unit tests were developed using **Pytest**, focusing on validating individual components of the system.
 
-## 4. **Functional Tests**
+## Functional Tests
 
 - Functional tests were expanded using **Postman**, with **Postbot** utilized to validate end-to-end scenarios (e.g., user login, account management, and transaction processing) in the User Acceptance Testing (UAT) environment.
 
-## 5. **Integration with CI/CD** 🔗
+## Integration with CI/CD 🔗
 
 - Functional tests are integrated into the build and deployment workflows. We use GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
 - This integration ensures high-quality code throughout the development lifecycle, from development to deployment.
 
 ---
 
-### Example Tests for Specific User Stories
+## Example Tests for Specific User Stories
 
 Below are some examples of tests implemented for specific user stories, found in `safebank-be/tests/functional/test_routes.py`:
 
