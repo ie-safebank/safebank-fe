@@ -90,11 +90,6 @@ SafeBank’s release strategy aligns closely with Microsoft’s Well-Architected
 - **Monitoring and Observability:** Azure tools provide actionable insights for performance and incident response.
 - **Operational Excellence:** Proactive management of quality, scalability, and security ensures a reliable product.
 
-**Resources Referenced:**
-- Microsoft Well-Architected Framework for Operational Excellence
-- Enable DevSecOps on Azure
----
-
 ## 7. Why SafeBank’s Release Strategy is the Best
 
 - **DORA Excellence:**
@@ -105,3 +100,9 @@ SafeBank’s release strategy aligns closely with Microsoft’s Well-Architected
 - **Security Leadership:** Proactive DevSecOps practices secure the pipeline and infrastructure.
 - **Scalability and Reliability:** Modular architecture supports growth without compromising performance.
 - **User Focus:** Advanced deployment strategies ensure minimal disruption and superior experiences.
+
+**Resources Referenced:**
+- Microsoft Well-Architected Framework for Operational Excellence
+- Enable DevSecOps on Azure
+---
+
