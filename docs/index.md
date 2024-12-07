@@ -37,8 +37,7 @@ Explore the sections below to navigate through the various aspects of our projec
 ### **System Design**
 - **General System Description**
   - [System Context](system-context.md)
-  - [Infrastructure Architecture Design](infrastructure-architecture.md)
-  - [Environments Design](environments-design.md)
+  - [Infrastructure Architecture Design & Environments Design](infrastructure-architecture.md)
   - [Release Strategy](release-strategy.md)
 - **Software Modeling**
   - [Use Case and Sequential Models](use-case-model.md)
