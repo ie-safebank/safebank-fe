@@ -83,14 +83,31 @@ SafeBank adopts a DTAP (Development, Testing, Acceptance, Production) model, ena
 - Automated dependency updates with Dependabot.
 - Comprehensive security audits for all dependencies.
 
-## 6. Alignment with Microsoft’s DevOps Culture and Principles
+### 5.4. Azure DevOps Integration
+- Used Azure DevOps for tracking work items, ensuring complete traceability from planning to deployment.
+- Enabled Slack notifications for task updates, ensuring the team stayed informed.
+
+
+## 6. Team Collaboration and Well-Being
+
+SafeBank’s DevOps culture emphasizes teamwork and employee well-being:
+
+### Communication
+- Weekly Scrum meetings fostered alignment and transparency.
+- Slack channels provided instant communication and collaboration.
+
+### Work-Life Balance
+- Automation reduced repetitive tasks, allowing the team to focus on innovation.
+- Real-time feedback loops minimized stress during issue resolution.
+
+## 7. Alignment with Microsoft’s DevOps Culture and Principles
 SafeBank’s release strategy aligns closely with Microsoft’s Well-Architected Framework and DevOps culture by emphasizing:
 - **Automation:** CI/CD pipelines powered by GitHub Actions reduce lead time and human error.
 - **Collaboration:** Stakeholder feedback in UAT ensures a user-centric approach.
 - **Monitoring and Observability:** Azure tools provide actionable insights for performance and incident response.
 - **Operational Excellence:** Proactive management of quality, scalability, and security ensures a reliable product.
 
-## 7. Why SafeBank’s Release Strategy is the Best
+## 8. Why SafeBank’s Release Strategy is the Best
 
 - **DORA Excellence:**
   - **Deployment Frequency:** Frequent deployments to DEV and UAT accelerate feedback.
