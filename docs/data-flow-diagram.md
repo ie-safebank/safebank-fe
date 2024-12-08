@@ -9,14 +9,13 @@ This data flow diagram follows the standard rules of a Data Flow Diagram (DFD):
 
 The diagram demonstrates how data moves through the system while maintaining clarity and simplicity.
 
-
 ---
 
 ## **1. Users' Interactions**
 ### 👤 **1.1 User Registration**
 - **Process**: Users initiate the registration process.
 - **Validation**: Submitted data undergoes a validation process to ensure accuracy and completeness.
-- **Outcome**: Successful validation results in account creation and storage of user data.
+- **Outcome**: Successful validation results in account creation, storing user data, and updating accounts data to link new accounts to users.
 
 ### 🔐 **1.2 User Login**
 - **Process**: Users input their credentials to log in.
@@ -44,13 +43,13 @@ The diagram demonstrates how data moves through the system while maintaining cla
 ### 📂 **2.2 Administrative Functions**
 Admin tasks include:
 - **List Users**: Retrieve and display user details.
-- **User Deletion**: Remove a user from the system.
-- **User Edit**: Update user details.
-- **User Creation**: Manually create a new user account.
+- **User Deletion**: Remove a user from the system and update user data.
+- **User Edit**: Update user details in the user database.
+- **User Creation**: Manually create a new user account and update user data.
 
 #### 🔒 **Data Handling**:
 - Admin actions are validated and logged for security.
-- Changes affect the respective accounts data stored in the system.
+- Changes affect the respective user data and accounts data stored in the system.
 
 ---
 
@@ -61,7 +60,7 @@ Admin tasks include:
 
 ### 📚 **3.2 Data Handling**
 - **User Data**: Stores user credentials and account information.
-- **Accounts Data**: Holds details of all user accounts.
+- **Accounts Data**: Holds details of all user accounts, updated during registration and transactions.
 - **Transactions Data**: Maintains records of completed transactions.
 
 ### 📊 **3.3 Monitoring and Feedback**
@@ -84,5 +83,3 @@ Admin tasks include:
 - 🔴 **Efficient monitoring** for system optimization.
 
 ---
-
-Let me know if you need further enhancements or adjustments! 🚀
