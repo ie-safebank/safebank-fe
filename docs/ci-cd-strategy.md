@@ -186,92 +186,102 @@ build-dev:
 
 # CD Strategy
 
-*🚀 Continuous Deployment Strategy for IE Bank Corp 🌐*
+🚀 Continuous Deployment Strategy for IE Bank Corp 🌐
 
-*🌟 Overview*
+### 🌟 Overview
 Our Continuous Deployment (CD) strategy ensures deployment for both the frontend - the static website and backend - the Dockerized API of the IE Bank system. This document also covers both the inner loop and outer loop workflows and the release strategy. 🛠️
 
+## Inner and Outer Loop Definition
 
-🛠️ **Frontend Workflow Steps**
-
-- Trigger the Workflow:
-The workflow starts automatically when code is pushed to the main branch, when a pull request targets main, or manually via workflow_dispatch.
-
-- Set Up Node.js Environment:
-Configures the Node.js environment using actions/setup-node@v4 to install Node.js and enables caching for npm.
-
-- Log In to Azure:
-Authenticates to Azure.
-
-- Retrieve Secrets from Azure Key Vault:
-Uses the Azure CLI to fetch sensitive environment-specific data, such as App Insights keys and deployment tokens, from Azure Key Vault.
-
-- Install Dependencies and Build Static Files:
-Runs npm install to install all project dependencies.
-Executes npm run build with the appropriate environment flag (dev, uat, prod) to generate optimized static files.
-
-- Upload Build Artifacts:
-Saves the generated static files as artifacts using actions/upload-artifact@v4.
-
-- Deploy to Azure Static Web Apps:
-Uses the Azure/static-web-apps-deploy@v1 action to upload static files to Azure Static Web Apps.
-By doing this, we are automating the deployment of the frontend to Azure’s globally distributed infrastructure, providing fast and reliable hosting.
-
-
-🛠️ **Backend Workflow Steps**
-- Trigger the Workflow:
-Starts on pushes to main, pull requests targeting main, or manual invocation via workflow_dispatch.
-
-- Check Out the Repository:
-Fetches the latest code from the repository.
-
-- Log In to our Azure Container Registry:
-Logs in to Azure using azure/login@v2 and retrieves ACR credentials (username and password) securely from Azure Key Vault.
-
-- Build Docker Image:
-Packages the backend application into a Docker container.
-
-- Push Docker Image to ACR:
-Uploads the built Docker image to ACR.
-
-- Deploy to Azure App Services:
-Configures Azure App Services to pull and run the backend container from ACR.
-
-*🌀 Inner Loop: Local Development and Debugging*
+### 🌀 Inner Loop: Local Development and Debugging
 For local development and debugging. We can run and debug the app directly in VSCode using Docker containers for a consistent and isolated environment. Here's how it's done:
 - 🔍 Debug Mode: Attach VSCode to running containers for step-by-step debugging.
 - ✅ Goal: Fast feedback during development while ensuring compatibility with production environments.
 
-*🌐 Outer Loop: Continuous Delivery Workflows*
+### 🌐 Outer Loop: Continuous Delivery Workflows
 The outer loop automates the build and deployment process for both the frontend and backend, ensuring fast, reliable, and repeatable releases.
 
-*Frontend Deployment (Static Website)*
-Workflow Name: deploy-frontend.yaml 🔗 [Link here](https://github.com/ie-safebank/safebank-fe/blob/main/.github/workflows/safebank-staticweb-frontend.yml)
-Steps:
-- 🎯 Trigger: On push to main branch/ pull request/ workflow dispatch.
-- 🛠️ Build: Generate optimized static assets using npm build.
-- 📤 Deploy: Deploy to Azure Static Web Apps.
+1. Frontend Deployment (Static Website)
+    - Workflow Name: deploy-frontend.yaml 🔗 [Link here](https://github.com/ie-safebank/safebank-fe/blob/main/.github/workflows/safebank-staticweb-frontend.yml)
+    - Key Steps:
+        - 🎯 Trigger: On push to main branch/ pull request/ workflow dispatch.
+        - 🛠️ Build: Generate optimized static assets using npm build.
+        - 📤 Deploy: Deploy to Azure Static Web Apps.
 
-*Backend Deployment (Dockerized API)*
-Workflow Name: safebank-docker-backend.yaml 🔗 [Link here](https://github.com/ie-safebank/safebank-be/blob/main/.github/workflows/safebank-docker-backend.yml)
-Steps:
-- 🎯 Trigger: On push to main branch/ pull request/ workflow dispatch.
-- 🛠️ Build Docker Image: Use Docker CLI to create a production-ready image.
-- 🐳 Push to Registry: Push the image to Azure Container Registry.
-🌐 Deploy: Deploy the containerized backend to Azure App Services.
+2.  Backend Deployment (Dockerized API)*
+    - Workflow Name: safebank-docker-backend.yaml 🔗 [Link here](https://github.com/ie-safebank/safebank-be/blob/main/.github/workflows/safebank-docker-backend.yml)
+    - Key Steps:
+        - 🎯 Trigger: On push to main branch/ pull request/ workflow dispatch.
+        - 🛠️ Build Docker Image: Use Docker CLI to create a production-ready image.
+        - 🐳 Push to Registry: Push the image to Azure Container Registry.
+        - 🌐 Deploy: Deploy the containerized backend to Azure App Services.
 
-*🎯 Release Strategy*
-Branching Model: Follows GitFeature with main for production and develop for staging. 🗂️
-Release Process:
-- Staging:
-Every pull request is reviewed by the team (us) to ensure code quality and adherence to standards. We have a branch protection in place that obliges every team member to get at least one approval from a fellow member before they can finish the pull request.✅
-After successful code reviews, the PR is merged, and the changes are automatically deployed to a staging environment for further validation.
-- Production:
-Merges to main trigger deployment to production, ensuring only reviewed and validated code is released.
-- Rollback Plan:
-Use tags to revert to a stable image/version in case of issues. 🔄
 
-💡 *Key Benefits of Our CD Strategy*
+## 🛠️ Frontend Workflow Overview**
+
+1. **Trigger the Workflow**:
+
+    - The workflow starts automatically when code is pushed to the main branch, when a pull request targets main, or manually via workflow_dispatch.
+
+3. **Set Up Node.js Environment**:
+
+    - Configures the Node.js environment using actions/setup-node@v4 to install Node.js and enables caching for npm.
+
+4. **Log In to Azure**:
+
+5. **Retrieve Secrets from Azure Key Vault**:
+
+    - Uses the Azure CLI to fetch sensitive environment-specific data, such as App Insights keys and deployment tokens, from Azure Key Vault.
+
+6. **Install Dependencies and Build Static Files**:
+
+    - Runs npm install to install all project dependencies.
+Executes npm run build with the appropriate environment flag (dev, uat, prod) to generate optimized static files.
+
+7. **Upload Build Artifacts**:
+
+    - Saves the generated static files as artifacts using actions/upload-artifact@v4.
+
+8. **Deploy to Azure Static Web Apps**:
+
+    - Uses the Azure/static-web-apps-deploy@v1 action to upload static files to Azure Static Web Apps.
+By doing this, we are automating the deployment of the frontend to Azure’s globally distributed infrastructure, providing fast and reliable hosting.
+
+
+## 🛠️ Backend Workflow Overview
+
+1. **Trigger the Workflow**:
+
+    - Starts on pushes to main, pull requests targeting main, or manual invocation via workflow_dispatch.
+
+2. **Check Out the Repository**:
+
+    - Fetches the latest code from the repository.
+
+3. **Log In to our Azure Container Registry**:
+
+    - Logs in to Azure using azure/login@v2 and retrieves ACR credentials (username and password) securely from Azure Key Vault.
+
+4. **Build Docker Image**:
+
+    - Packages the backend application into a Docker container.
+
+5. **Push Docker Image to ACR**:
+
+    - Uploads the built Docker image to ACR.
+
+6. **Deploy to Azure App Services**:
+
+    - Configures Azure App Services to pull and run the backend container from ACR.
+
+## 🎯 Release Strategy
+  - **Branching Model**: Follows GitFeature with main for production and develop for staging. 
+  - **Staging**: Every pull request is reviewed by the team (us) to ensure code quality and adherence to standards.
+    We have a branch protection in place that obliges every team member to get at least one approval from a fellow member before they can finish the pull request.✅ After successful code reviews, the PR is merged, and the changes are automatically deployed to a staging environment for further validation.
+  - **Production**: Merges to main trigger deployment to production, ensuring only reviewed and validated code is released.
+  - **Rollback Plan**: Use tags to revert to a stable image/version in case of issues. 🔄
+
+## 💡 Key Benefits of Our CD Strategy
 - ✅ Automation: No manual steps – deployments happen automatically on code changes.
 - ✅ Reliability: Docker containers and static site hosting ensure consistent environments.
 - ✅ Speed: Developers can focus on features instead of deployment tasks.
