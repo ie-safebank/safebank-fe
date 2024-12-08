@@ -54,53 +54,6 @@ Each user story was documented with the following details to ensure consistency 
       - Successful operations display a confirmation message.
     - **Priority**: 1
 
-### **User Portal**
-#### **Epic: User Portal**
-- **Feature**: User Login
-  - **User Story**:  
-    - **Title**: "As a user, I want to securely log in to my account so that I can view my financial data."
-    - **Tasks**:
-      - Implement authentication mechanisms.
-      - Validate credentials against stored data.
-    - **Acceptance Criteria**:
-      - User credentials must be validated securely.
-      - Successful login redirects users to their dashboard.
-    - **Priority**: 1
-
----
-
-## **Adding Complexity and Roles**
-
-To manage the dynamic nature of the project, I included tasks within user stories for specific roles:
-- **Cloud Architect**: Focused on tasks like setting up infrastructure and ensuring scalability.
-- **Infrastructure Developer**: Managed tasks such as creating modular Bicep templates.
-- **Full Stack Developer**: Handled frontend/backend integration and API development.
-
-### **Example: Infrastructure Management**
-#### **Epic: Infrastructure Management**
-- **Feature**: Modularize Core Infrastructure
-  - **User Story**:
-    - **Title**: "As an infrastructure developer, I want a modular Bicep model for deployment so that infrastructure changes are easier to manage."
-    - **Tasks**:
-      - Create reusable Bicep modules for storage and networking.
-      - Automate deployments using GitHub Actions.
-    - **Acceptance Criteria**:
-      - All modules are reusable across environments.
-      - Deployment workflows are tested and functional.
-    - **Priority**: 2
-
----
-
-## **Visualizing the Work**
-
-To maintain transparency, I documented and visualized user stories in **Azure DevOps**, ensuring traceability and collaboration:
-- **Backlog Structure**: 
-  - Epics, Features, and User Stories were organized hierarchically.
-  - Active, closed, and pending items were clearly marked.
-- **Task Assignment**: 
-  - Each user story was assigned to the relevant team member based on their expertise.
-- **Acceptance Criteria**: Provided a clear definition of done, ensuring all stakeholders understood the expected outcomes.
-
 ---
 
 ## **Refining the Backlog**
@@ -122,7 +75,3 @@ By documenting user stories effectively and ensuring clarity in their structure,
 
 ---
 
-
-![Admin Portal User Stories](images/screenshot1.png)
-
-![Acceptance Criteria](images/screenshot3.png)
