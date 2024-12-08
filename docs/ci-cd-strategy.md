@@ -1,6 +1,6 @@
-# CI Strategy 🚀
+# CI Strategy
 
-This section outlines the continuous integration (CI) strategy implemented at SafeBank.
+This section outlines the continuous integration (CI) strategy implemented at SafeBank. 🚀
 
 ## Frontend CI Workflow
 [See the workflow here](https://github.com/ie-safebank/safebank-fe/blob/main/.github/workflows/safebank-staticweb-frontend.yml)
@@ -68,4 +68,4 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
     - Packages the Dockerfile and associated files, and uploads them as an artifact.
     - This artifact can be used in later jobs to build a Docker image.
   
-# CD Strategy 🚀
+# CD Strategy
