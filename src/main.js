@@ -13,7 +13,7 @@ const appInsights = new ApplicationInsights({
   config: {
     instrumentationKey: process.env.VUE_APP_APPINSIGHTS_INSTRUMENTATIONKEY,
     enableAutoRouteTracking: true, // Automatically track route changes
-    enableDebug: process.env.VUE_APP_ENV !== "prod", // Debugging for non-prod environments
+    enableDebug: process.env.VUE_APP_ENV,
   },
 });
 appInsights.loadAppInsights();
