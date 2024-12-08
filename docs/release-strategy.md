@@ -16,7 +16,8 @@ SafeBank’s release strategy is designed to deliver **rapid**, **reliable**, an
 ---
 
 ## 🛠️ **3. Environment Design**
-SafeBank adopts a **DTAP** (Development, Testing, Acceptance, Production) model, enabling seamless transitions and thorough validations across environments. You can check ou environment Design in more depth in our 
+SafeBank adopts a **DTAP** (Development, Testing, Acceptance, Production) model, enabling seamless transitions and thorough validations across environments.  
+*You can check our environment design in more depth in our [Infrastructure Architecture Design & Environments Design](infrastructure-architecture.md) section.*
 
 ### 3.1. **Development Environment (DEV)**
 - **🎯 Purpose:** Supports feature development and testing by developers.
