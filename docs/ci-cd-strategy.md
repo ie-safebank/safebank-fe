@@ -67,3 +67,5 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 
     - Packages the Dockerfile and associated files, and uploads them as an artifact.
     - This artifact can be used in later jobs to build a Docker image.
+  
+# CD Strategy 🚀
