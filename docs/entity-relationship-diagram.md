@@ -14,8 +14,8 @@ This ER diagram models a relational database for a system that manages **Users**
 ### 1. **Users** 👤
 - **Attributes**:
   - `username` (Primary Key): A unique identifier for each user. This key establishes a direct connection between the user and their accounts, as each account is linked to a specific `username`.
-  - `password`: Stores the hashed password for secure user authentication.
-  - `country`: Indicates the user's country of residence, which can be used for regional account configurations or compliance purposes.
+  - `password`: Stores the password for secure user authentication.
+  - `country`: Indicates the user's country of residence, set by fault to Spain.
 
 - **Context and Relationships**:
   - Each user can own **multiple accounts**. This is represented through the `username` attribute in the **Accounts** table, which acts as a foreign key referencing the `username` in **Users**.
@@ -30,9 +30,9 @@ This ER diagram models a relational database for a system that manages **Users**
   - `account_number`: A unique number used for transactions and external references.
   - `balance`: The current monetary value in the account. This attribute tracks the user's funds and is frequently updated during transactions.
   - `currency`: Specifies the currency type (e.g., USD, EUR) associated with the account, allowing support for multi-currency systems.
-  - `status`: Represents whether the account is active, inactive, or closed.
+  - `status`: Represents whether the account is active, or not.
   - `created_at`: Records the timestamp when the account was created, useful for auditing and history tracking.
-  - `country`: Indicates the account's country, which might differ from the user's residence in certain cases (e.g., offshore accounts).
+  - `country`: Indicates the account's country.
   - `username` (Foreign Key): Links each account to a specific user by referencing the `username` attribute in the **Users** table.
 
 - **Context and Relationships**:
