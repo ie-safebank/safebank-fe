@@ -20,28 +20,25 @@ Explore the sections below to navigate through the various aspects of our projec
 - [Introduction](introduction.md)
 - [Team Roles and Responsibilities](team-overview.md)
 - [Product Vision and Mission](product-vision-mission.md)
+- [MVP & Requirements](mvp.md)
+- [Product Roadmap](roadmap.md)
 - [Objectives and Key Results (OKRs)](okrs.md)
 
 ---
 
 ### **Requirements**
-- **Functional Requirements**
-  - [list of functional requirements](functional-requirements.md)
-  - [User Portal Requirements](user-portal.md)
-- **Non-Functional Requirements**
-  - [Authentication and Security](authentication-security.md)
-  - [Frontend Design Principles](frontend-design.md)
+- ⁠[Functional Requirements](functional-requirements.md)
+- [Non-Functional Requirements](nrf.md)
 
 ---
 
 ### **System Design**
 - **General System Description**
-  - [System Context](system-context.md)
-  - [Infrastructure Architecture Design](infrastructure-architecture.md)
-  - [Environments Design](environments-design.md)
   - [Release Strategy](release-strategy.md)
+  - [Infrastructure Architecture Design & Environments Design](infrastructure-architecture.md)
 - **Software Modeling**
-  - [Use Case and Sequential Models](use-case-model.md)
+  - [Use Case](use-case-model.md)
+  - [Sequential Models](sequential.md)
   - [Entity Relationship Diagram](entity-relationship-diagram.md)
   - [Data Flow Diagram](data-flow-diagram.md)
   - [12-Factor App Design](twelve-factor-design.md)
@@ -54,9 +51,12 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ---
 
-### **Development Practices**
-- [DevOps Practices](devops-practices.md)
+### **Agile Practices**
+
 - [Scrum Methodology](scrum-methodology.md)
+  - [Product Backlog](scrum-methodology.md#product-backlog)
+  - [Sprint Planning and Execution](scrum-methodology.md#sprint-planning-and-execution)
+  - [Sprint Review and Retrospective](scrum-methodology.md#sprint-review-and-retrospective)
 - [Collaboration Strategy](collaboration-strategy.md)
 
 ---
@@ -90,12 +90,6 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ---
 
-### **Sprint Artifacts**
-- [Product Backlog](product-backlog.md)
-- [Sprint Planning and Execution](sprint-planning.md)
-- [Sprint Review and Retrospective](sprint-review-retrospective.md)
-
----
 
 ## 💡 Tips
 - Start with the [Introduction](introduction.md) for a high-level overview.

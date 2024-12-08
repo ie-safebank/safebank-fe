@@ -96,7 +96,16 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
   - On pull request to `main`
   - On workflow dispatch
 
-### Build Key Steps 🛠️
+### Build Jobs 🛠️
+  - `build-dev`, `build-uat`, `build-prod`: These jobs automate the process of building the backend application for different environments
+
+| **Aspect**             | **build-dev**                 | **build-uat**                 | **build-prod**                |
+|-------------------------|-------------------------------|--------------------------------|--------------------------------|
+| **Key Vault Name**      | `${{ env.KEY_VAULT_NAME_DEV }}` | `${{ env.KEY_VAULT_NAME_UAT }}` | `${{ env.KEY_VAULT_NAME_PROD }}` |
+| **App Insights Key**    | Retrieved from **dev** Key Vault | Retrieved from **UAT** Key Vault | Retrieved from **prod** Key Vault |
+| **Docker Context Name** | `docker-context-dev`          | `docker-context-uat`          | `docker-context-prod`         |
+
+### Key Steps 🔑
 
 1. **Checkout**: `actions/checkout@v4`
 
@@ -105,51 +114,71 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 2. **Set up Python**: `actions/setup-python@v5`
 
     - Configures Python runtime environment, ensuring compatibility with the project's code and dependencies.
+  
+3. **Azure Login:**
+    - Logs into Azure using azure/login@v2 and credentials stored in AZURE_CREDENTIALS.
 
-3. **`pip` Install dependencies**
+4. **Fetch Secrets From Azure Key Vault**
+    - Retrieves the Application Insights key from the Azure Key Vault
+  
+5. **`pip` Install dependencies**
 
-4. **Test using Python functional and unit tests**
+7. **Use flake8 for linting **
+
+8. **Test using Python functional and unit tests**
 
     - Executes the Python test suite consisting of unit and functional tests
 
-5. **Save Docker context as artifact**: `actions/upload-artifact@v4`
+9. **Save Docker context as artifact**: `actions/upload-artifact@v4`
 
     - Packages the Dockerfile and associated files, and uploads them as an artifact.
     - This artifact can be used in later jobs to build a Docker image.
 
 ### Code Snippet 💻 
 ```
-build:
-    runs-on: ubuntu-latest
+build-dev:
+  runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+  steps:
+    - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
 
-      - name: Upgrade pip
-        run: python -m pip install --upgrade pip
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+    - name: "Log in to azure"
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Lint with flake8
-        run: |
-          pip install flake8 pytest
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      - name: Test with pytest
-        run: |
-          python -m pytest --cov=iebank_api -v
-      - name: Save Docker context as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: docker-context
-          path: .
-          if-no-files-found: error
+    - name: "Get app insights key from vault"
+      uses: Azure/cli@v2.1.0
+      with:
+        inlineScript: |
+          echo "VUE_APP_APPINSIGHTS_INSTRUMENTATIONKEY=$(az keyvault secret show --name appInsightsKey --vault-name ${{ env.KEY_VAULT_NAME_DEV }} --query value -o tsv)" >> $GITHUB_ENV
+
+    - name: Upgrade pip
+      run: python -m pip install --upgrade pip
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Lint with flake8
+      run: |
+        pip install flake8 pytest
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest
+      run: |
+        python -m pytest --cov=iebank_api -v
+    - name: Save Docker context as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-context-dev
+        path: .
+        if-no-files-found: error
 ```
   
 # CD Strategy
