@@ -182,5 +182,40 @@ build-dev:
         path: .
         if-no-files-found: error
 ```
-  
+
 # CD Strategy
+
+**🚀 Continuous Deployment Strategy for IE Bank Corp 🌐**
+
+**🌟 Overview**
+Our Continuous Deployment (CD) strategy ensures deployment for both the frontend - the static website and backend - the Dockerized API of the IE Bank system. This document also covers both the inner loop and outer loop workflows and the release strategy. 🛠️
+
+**🌀 Inner Loop: Local Development and Debugging**
+For local development and debugging. We can run and debug the app directly in VSCode using Docker containers for a consistent and isolated environment. Here's how it's done:
+
+- 🐳 Use Docker Compose to spin up all required services (frontend, backend, database) locally.
+- 🔍 Debug Mode: Attach VS Code to running containers for step-by-step debugging.
+- ✅ Goal: Fast feedback during development while ensuring compatibility with production environments.
+
+**🌐 Outer Loop: Continuous Delivery Workflows**
+The outer loop automates the build and deployment process for both the frontend and backend, ensuring fast, reliable, and repeatable releases.
+
+**Frontend Deployment (Static Website)**
+Workflow Name: deploy-frontend.yaml 🔗 [Link here](https://github.com/ie-safebank/safebank-fe/blob/main/.github/workflows/safebank-staticweb-frontend.yml)
+Steps:
+- 🎯 Trigger: On push to main branch/ pull request/ workflow dispatch.
+- 🛠️ Build: Generate optimized static assets using npm build.
+- 📤 Deploy: Deploy to Azure Static Web Apps.
+
+**Backend Deployment (Dockerized API)**
+Workflow Name: safebank-docker-backend.yaml 🔗 [Link here](https://github.com/ie-safebank/safebank-be/blob/main/.github/workflows/safebank-docker-backend.yml)
+Steps:
+- 🎯 Trigger: On push to main branch/ pull request/ workflow dispatch.
+- 🛠️ Build Docker Image: Use Docker CLI to create a production-ready image.
+- 🐳 Push to Registry: Push the image to Azure Container Registry.
+- 🌐 Deploy: Deploy the containerized backend to Azure App Services.
+
+**🎯 Release Strategy**
+Branching Model: Follows GitFlow with main for production and develop for staging. 🗂️
+Release Process:
+- Staging: Every PR to develop deploys to a staging environment.
