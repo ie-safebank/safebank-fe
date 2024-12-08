@@ -52,9 +52,13 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ---
 
-### **Development Practices**
-- [DevOps Practices](devops-practices.md)
+### **Agile Practices**
+
 - [Scrum Methodology](scrum-methodology.md)
+  - [Overview of Our Scrum Strategy](scrum-methodology.md#overview-of-our-scrum-strategy)
+  - [Product Backlog](scrum-methodology.md#product-backlog)
+  - [Sprint Planning and Execution](scrum-methodology.md#sprint-planning-and-execution)
+  - [Sprint Review and Retrospective](scrum-methodology.md#sprint-review-and-retrospective)
 - [Collaboration Strategy](collaboration-strategy.md)
 
 ---
@@ -87,12 +91,6 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ---
 
-### **Sprint Artifacts**
-- [Product Backlog](product-backlog.md)
-- [Sprint Planning and Execution](sprint-planning.md)
-- [Sprint Review and Retrospective](sprint-review-retrospective.md)
-
----
 
 ## 💡 Tips
 - Start with the [Introduction](introduction.md) for a high-level overview.
