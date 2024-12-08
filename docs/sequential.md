@@ -1,12 +1,12 @@
-# ✨ **Sequence Diagram Documentation**
+# **Sequence Diagram Documentation**
 
-## 🌟 **Sequence Diagram 1: User Operations**
+## **Sequence Diagram 1: User Operations**
 
 ![User Operations](images/userseq.png)
 
 This diagram illustrates the flow of operations when a user interacts with the banking system.
 
-### 📝 **Steps**:
+### **Steps**:
 1. **🔑 Login Request**:
    - The user initiates a login request via the User Interface.
    - The User Interface forwards the request to the Backend for validation.
@@ -45,13 +45,13 @@ This diagram illustrates the flow of operations when a user interacts with the b
 
 ---
 
-## 🌟 **Sequence Diagram 2: Admin Operations**
+## **Sequence Diagram 2: Admin Operations**
 
 ![Admin Operations](images/adminseq.png)
 
 This diagram showcases the flow of operations when an admin interacts with the banking system.
 
-### 📝 **Steps**:
+### **Steps**:
 1. **🔑 Login Request**:
    - The admin initiates a login request via the User Interface.
    - The User Interface forwards the request to the Backend for validation.
