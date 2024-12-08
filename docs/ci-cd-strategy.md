@@ -2,10 +2,10 @@
 
 This section outlines the continuous integration (CI) strategy implemented at SafeBank. 🚀
 
-## Frontend CI Workflow
+## Frontend CI Workflow 🌐
 [See the full code here](https://github.com/ie-safebank/safebank-fe/blob/main/.github/workflows/safebank-staticweb-frontend.yml)
 
-### Trigger Events
+### Trigger Events ⏯️ 
 
   - On push to `main`
   - On pull request to `main`
@@ -21,7 +21,7 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 | **Build Output**     | `dist-dev/`               | `dist-uat/`              | `dist-prod/`             |
 | **Purpose**          | Local development/testing | Stakeholder/user testing | Deployment for end-users |
 
-### Key Steps
+### Key Steps 🔑
 
 1. **Code Checkout**: `actions/checkout@v4`
 
@@ -45,7 +45,7 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 
     - Packages the build output as an artifact and uploads it for use in later workflow steps or jobs
   
-### Code Snippet
+### Code Snippet 💻 
 
 ```
   build-dev:
@@ -86,11 +86,11 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 
 ```
 
-## Backend CI Workflow
+## Backend CI Workflow ⚙️
 
 [See the workflow here](https://github.com/ie-safebank/safebank-be/blob/main/.github/workflows/safebank-docker-backend.yml)
 
-### Trigger Events
+### Trigger Events ⏯️ 
 
   - On push to any branch
   - On pull request to `main`
@@ -116,5 +116,40 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 
     - Packages the Dockerfile and associated files, and uploads them as an artifact.
     - This artifact can be used in later jobs to build a Docker image.
+
+### Code Snippet 💻 
+```
+build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Lint with flake8
+        run: |
+          pip install flake8 pytest
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Test with pytest
+        run: |
+          python -m pytest --cov=iebank_api -v
+      - name: Save Docker context as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-context
+          path: .
+          if-no-files-found: error
+```
   
 # CD Strategy
