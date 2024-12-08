@@ -191,6 +191,52 @@ build-dev:
 *🌟 Overview*
 Our Continuous Deployment (CD) strategy ensures deployment for both the frontend - the static website and backend - the Dockerized API of the IE Bank system. This document also covers both the inner loop and outer loop workflows and the release strategy. 🛠️
 
+
+🛠️ **Frontend Workflow Steps**
+
+- Trigger the Workflow:
+The workflow starts automatically when code is pushed to the main branch, when a pull request targets main, or manually via workflow_dispatch.
+
+- Set Up Node.js Environment:
+Configures the Node.js environment using actions/setup-node@v4 to install Node.js and enables caching for npm.
+
+- Log In to Azure:
+Authenticates to Azure.
+
+- Retrieve Secrets from Azure Key Vault:
+Uses the Azure CLI to fetch sensitive environment-specific data, such as App Insights keys and deployment tokens, from Azure Key Vault.
+
+- Install Dependencies and Build Static Files:
+Runs npm install to install all project dependencies.
+Executes npm run build with the appropriate environment flag (dev, uat, prod) to generate optimized static files.
+
+- Upload Build Artifacts:
+Saves the generated static files as artifacts using actions/upload-artifact@v4.
+
+- Deploy to Azure Static Web Apps:
+Uses the Azure/static-web-apps-deploy@v1 action to upload static files to Azure Static Web Apps.
+By doing this, we are automating the deployment of the frontend to Azure’s globally distributed infrastructure, providing fast and reliable hosting.
+
+
+🛠️ **Backend Workflow Steps**
+- Trigger the Workflow:
+Starts on pushes to main, pull requests targeting main, or manual invocation via workflow_dispatch.
+
+- Check Out the Repository:
+Fetches the latest code from the repository.
+
+- Log In to our Azure Container Registry:
+Logs in to Azure using azure/login@v2 and retrieves ACR credentials (username and password) securely from Azure Key Vault.
+
+- Build Docker Image:
+Packages the backend application into a Docker container.
+
+- Push Docker Image to ACR:
+Uploads the built Docker image to ACR.
+
+- Deploy to Azure App Services:
+Configures Azure App Services to pull and run the backend container from ACR.
+
 *🌀 Inner Loop: Local Development and Debugging*
 For local development and debugging. We can run and debug the app directly in VSCode using Docker containers for a consistent and isolated environment. Here's how it's done:
 - 🔍 Debug Mode: Attach VSCode to running containers for step-by-step debugging.
