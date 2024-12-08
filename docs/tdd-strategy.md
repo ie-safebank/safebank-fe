@@ -29,7 +29,21 @@
 
 ## Integration with CI/CD 🔗
 
-- Postman tests are integrated into the build and deployment workflows.
+- Postman tests are integrated into the build and deployment workflows of the backend repository.
+  
+  ```
+  automated-api-tests:
+    runs-on: ubuntu-latest
+    needs: deploy-uat
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          npm install -g newman
+      - name: Run Postman tests
+        run: |
+          newman run ./tests/ci/safebank.postman_collection.json
+  ```
 - We used GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
   [See CI/CD documentaton here](ci-cd-strategy.md)
 
