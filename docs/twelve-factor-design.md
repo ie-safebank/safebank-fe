@@ -1,7 +1,8 @@
 ---
 
-## **SafeBank and 12-Factor App Design** 🌟  
+## **SafeBank and 12-Factor App Design** 
 At SafeBank, we are committed to building a scalable, maintainable, and portable platform that adheres to modern application design principles. By aligning with the **12-Factor App methodology** (https://12factor.net/), we ensure that our infrastructure is well-suited for cloud environments, enabling seamless deployment, scaling, and development. Below is how the 12 factors influence and enhance the design of SafeBank:
+
 
 ---
 
