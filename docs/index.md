@@ -20,18 +20,16 @@ Explore the sections below to navigate through the various aspects of our projec
 - [Introduction](introduction.md)
 - [Team Roles and Responsibilities](team-overview.md)
 - [Product Vision and Mission](product-vision-mission.md)
+- [MVP & Requirements](mvp.md)
+- [Product Roadmap](roadmap.md)
+- [Collaboration Strategy](collaboration.md)
 - [Objectives and Key Results (OKRs)](okrs.md)
 
 ---
 
 ### **Requirements**
-- **Functional Requirements**
-  - [list of functional requirements](functional-requirements.md)
-  - [User Portal Requirements](user-portal.md)
-- **Non-Functional Requirements**
-  - [Authentication and Security](authentication-security.md)
-  - [Frontend Design Principles](frontend-design.md)
-
+- ⁠[Functional Requirements](functional-requirements.md)
+- ⁠[Non-Functional Requirements](nrf.md)
 ---
 
 ### **System Design**
