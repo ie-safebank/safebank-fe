@@ -43,6 +43,7 @@ SafeBank adopts a DTAP (Development, Testing, Acceptance, Production) model, ena
 ## 4. Continuous Integration and Deployment (CI/CD) Pipeline
 
 ### 4.1. Feature Branching Strategy
+![Branching Strategy](images/branching.png)
 **Purpose:** Supports parallel development to reduce conflicts and accelerate feature delivery.  
 **Implementation:**
 - Developers create short-lived feature branches, with automated builds and deployments triggered for each push.
