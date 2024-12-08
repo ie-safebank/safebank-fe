@@ -29,6 +29,7 @@ Explore the sections below to navigate through the various aspects of our projec
 ### **Requirements**
 - ⁠[Functional Requirements](functional-requirements.md)
 - [Non-Functional Requirements](nrf.md)
+- [User Stories](userstories.md)
 
 ---
 
@@ -80,8 +81,7 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ### **Infrastructure**
 - [Infrastructure as Code (IaC)](iac-strategy.md)
-- [Azure Services Configuration](azure-services.md)
-- [Bicep Modularization](bicep-modularization.md)
+- [Azure Services Configuration & Bicep Modularization](azure-services.md)
 
 ---
 
