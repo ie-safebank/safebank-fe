@@ -30,7 +30,20 @@ jobs:
           node-version: '18.x'
           cache: 'npm'
 
+      - name: "Log in to azure"
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: "Get registry credentials from vault"
+        uses: Azure/cli@v2.1.0
+        with:
+          inlineScript: |
+            echo "VUE_APP_APPINSIGHTS_INSTRUMENTATIONKEY=$(az keyvault secret show --name appInsightsKey --vault-name ${{ env.KEY_VAULT_NAME_DEV }} --query value -o tsv)" >> $GITHUB_ENV
+
       - name: npm install, build, and test
+        env:
+          VUE_APP_APPINSIGHTS_INSTRUMENTATIONKEY: ${{ env.VUE_APP_APPINSIGHTS_INSTRUMENTATIONKEY }}
         run: |
           npm install
           npm run build -- --mode development --dest dist-dev ## this command will build the vue.js app using .env.development variables into the dest-div/ folder
