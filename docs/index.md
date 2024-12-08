@@ -58,6 +58,7 @@ Explore the sections below to navigate through the various aspects of our projec
 - [DevOps Practices](devops-practices.md)
 - [Scrum Methodology](scrum-methodology.md)
 - [Collaboration Strategy](collaboration-strategy.md)
+- [Git Feature Branching Strategy](branching-strategy.md)
 
 ---
 
