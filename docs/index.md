@@ -49,9 +49,9 @@ Explore the sections below to navigate through the various aspects of our projec
 ### **Agile Practices**
 
 - [Scrum Methodology](scrum-methodology.md)
-  - [Product Backlog](scrum-methodology.md#product-backlog)
-  - [Sprint Planning and Execution](scrum-methodology.md#sprint-planning-and-execution)
-  - [Sprint Review and Retrospective](scrum-methodology.md#sprint-review-and-retrospective)
+  - [Product Backlog](scrum-methodology.md#2-product-backlog)
+  - [Sprint Planning and Execution](scrum-methodology.md#3-sprint-planning-and-execution)
+  - [Sprint Review and Retrospective](scrum-methodology.md#4-sprint-review-and-retrospective)
 - [Collaboration Strategy](collaboration-strategy.md)
 
 ---
