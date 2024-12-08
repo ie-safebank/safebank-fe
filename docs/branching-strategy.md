@@ -1,4 +1,4 @@
-## Git Feature Branching Strategy 🌳
+# Git Feature Branching Strategy 🌳
 
 - **Github Branch Protection Rules** 🔒
 
