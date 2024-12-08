@@ -1,7 +1,8 @@
-# **Non-Functional Requirements (NFRs)**
+
+---
+# **Non-Functional Requirements**
 
 Clara, the Cloud Architect, worked closely with all developers, particularly Site Reliability Engineers (**Leo** and **Peter**) and Security Engineer (**Massimo**), to ensure that the non-functional requirements were always up to date and aligned with the project's needs. This collaborative approach ensured that the system was designed to maximize **user security** and **comfort** while meeting the highest standards of **reliability**, **performance**, and **scalability**.
----
 
 ## **Reliability**
 - **NFR1:** The system must achieve a minimum uptime of **99%** across all environments (DEV, UAT, PROD).  
