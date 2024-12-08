@@ -21,6 +21,7 @@ Each functional requirement in this document was thoughtfully designed with a **
   - **"Username"** 🧾  
   - **"Password"** 🔒  
   - **"Password Confirmation"** 🔑  
+- **User story**: https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=176
 - **FR4:** If the user does not enter matching passwords, an **error message** must be displayed.  
 - **FR5:** If the user selects a username that already exists, an **error message** must be displayed.  
 - **FR6:** Upon successful registration, the system must:  
@@ -34,6 +35,7 @@ Each functional requirement in this document was thoughtfully designed with a **
 - **FR8:** When users click the **"User Log In"** button, they must be directed to a login page with fields for entering:  
   - **"Username"**  
   - **"Password"**  
+- **User story**: https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=328
 - **FR9:** If users enter incorrect login credentials, the system must display an **error message** prompting them to re-enter valid login details.  
 - **FR10:** Both the login page and the registration page must include an option to return to the home page.  
 - **FR11:** Upon successful login, users must be redirected to their personalized account management portal.
@@ -44,9 +46,11 @@ Each functional requirement in this document was thoughtfully designed with a **
 - **FR12:** The account management portal must display a list of all bank accounts linked to the user’s profile, showing:  
   - **Username**  
   - **Account number**  
+  - **Country**
   - **Account balance**  
   - **Currency**  
   - **Status**  
+- **User story**: https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=173
 - **FR13:** Users must be able to view details for specific transactions in their transaction history, including:  
   - **Transaction origin**  
   - **Source account**  
@@ -54,6 +58,7 @@ Each functional requirement in this document was thoughtfully designed with a **
   - **Amount**  
   - **Date**  
 - **FR14:** The account management portal must include a **"Transfer Money"** button, accessible to logged-in users.
+- **User story**: https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=170
 
 ---
 
@@ -77,6 +82,8 @@ Each functional requirement in this document was thoughtfully designed with a **
 - **FR19:** When admins click the **"Admin Log In"** button, they must be directed to an admin login page with fields for entering:  
   - **Administrator username**  
   - **Administrator password**  
+- **User story**: https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=162
+
 - **FR20:** If admins enter incorrect login credentials, the system must display an **error message** prompting them to re-enter valid login details.  
 - **FR21:** Upon successful login, admins must gain access to a user management portal.
 

@@ -32,16 +32,16 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
     - Installs a specified Node.js version, ensuring compatibility with the project's dependencies and build tools
 
 3. **Login to Azure**: `azure/login@v2`
+   
     - Logs into Azure using the credentials stored in GitHub Secrets (${{ secrets.AZURE_CREDENTIALS }})
-    - Allows us to fetch secrets from the key vault
   
 4. **Get Registry Credentials from vault**: `Azure/cli@v2.1.0`
+   
     -  Fetches a secret (`appInsightsKey`) from Azure Key Vault using Azure CLI
-    -  Adds the secret to the environment variables of the current workflow ($GITHUB_ENV).
   
-6.  **`npm` Install Dependencies and Build**
+5.  **`npm` Install Dependencies and Build**
 
-7. **Upload artifact for deployment job**: `actions/upload-artifact@v4`
+6. **Upload artifact for deployment job**: `actions/upload-artifact@v4`
 
     - Packages the build output as an artifact and uploads it for use in later workflow steps or jobs
   
@@ -101,29 +101,31 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 
 | **Aspect**             | **build-dev**                 | **build-uat**                 | **build-prod**                |
 |-------------------------|-------------------------------|--------------------------------|--------------------------------|
-| **Key Vault Name**      | `${{ env.KEY_VAULT_NAME_DEV }}` | `${{ env.KEY_VAULT_NAME_UAT }}` | `${{ env.KEY_VAULT_NAME_PROD }}` |
+| **Key Vault Name**      | `env.KEY_VAULT_NAME_DEV` | `env.KEY_VAULT_NAME_UAT` | `env.KEY_VAULT_NAME_PROD` |
 | **App Insights Key**    | Retrieved from **dev** Key Vault | Retrieved from **UAT** Key Vault | Retrieved from **prod** Key Vault |
 | **Docker Context Name** | `docker-context-dev`          | `docker-context-uat`          | `docker-context-prod`         |
 
 ### Key Steps 🔑
 
 1. **Checkout**: `actions/checkout@v4`
-
+    
     - It ensures the build workflow has access to the correct version of the codebase
 
 2. **Set up Python**: `actions/setup-python@v5`
-
+    
     - Configures Python runtime environment, ensuring compatibility with the project's code and dependencies.
   
-3. **Azure Login:**
-    - Logs into Azure using azure/login@v2 and credentials stored in AZURE_CREDENTIALS.
-
-4. **Fetch Secrets From Azure Key Vault**
-    - Retrieves the Application Insights key from the Azure Key Vault
+3. **Login to Azure**: `azure/login@v2`
+   
+    - Logs into Azure using the credentials stored in GitHub Secrets (${{ secrets.AZURE_CREDENTIALS }})
+  
+4. **Get Registry Credentials from vault**: `Azure/cli@v2.1.0`
+   
+    -  Fetches a secret (`appInsightsKey`) from Azure Key Vault using Azure CLI
   
 5. **`pip` Install dependencies**
 
-7. **Use flake8 for linting **
+7. **Use flake8 for Linting **
 
 8. **Test using Python functional and unit tests**
 
