@@ -125,7 +125,7 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
   
 5. **`pip` Install dependencies**
 
-7. **Use flake8 for Linting **
+7. **Use flake8 for Linting**
 
 8. **Test using Python functional and unit tests**
 
