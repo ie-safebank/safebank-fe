@@ -29,7 +29,7 @@ Explore the sections below to navigate through the various aspects of our projec
 
 ### **Requirements**
 - ⁠[Functional Requirements](functional-requirements.md)
-- ⁠[Non-Functional Requirements](nrf.md)
+- [Non-Functional Requirements](nrf.md)
 ---
 
 ### **System Design**
