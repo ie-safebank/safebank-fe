@@ -25,7 +25,7 @@ Below is a detailed breakdown of how the 12-Factor principles are applied to Saf
 | **Disposability**     | Maximize robustness with fast startup and graceful shutdown.                                     | Containers are optimized for rapid startup/shutdown, with rolling updates ensuring zero downtime deployments.      |
 | **Dev/Prod Parity**   | Keep development, staging, and production as similar as possible.                                | Consistent configurations across environments, with differences limited to access permissions.                    |
 | **Logs**              | Treat logs as event streams.                                                                    | Logs aggregated via **Azure Monitor**, **Application Insights**, and **Log Analytics** for actionable insights.   |
-| **Admin Processes**   | Run admin/management tasks as one-off processes.                                                | Database migrations and maintenance tasks executed as isolated CI/CD workflows or Azure CLI commands.             |
+| **Admin Processes**   | Run admin/management tasks as one-off processes.                                                | Database migrations and maintenance tasks executed as isolated CI/CD workflows.             |
 
 ---
 
