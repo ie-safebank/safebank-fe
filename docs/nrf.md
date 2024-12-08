@@ -6,6 +6,8 @@ Clara, the Cloud Architect, worked closely with all developers, particularly Sit
 
 ## **Reliability**
 - **NFR1:** The system must achieve a minimum uptime of **99%** across all environments (DEV, UAT, PROD).  
+-**User Story:** https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=281
+
 - **NFR2:** Critical services (e.g., transactions, user management) must remain available during failovers or high-severity incidents.  
 - **NFR3:** The system must implement failover mechanisms, ensuring recovery within **1 hour** during regional outages.  
 - **NFR4:** Daily database snapshots must be taken to support disaster recovery and prevent data loss.  
@@ -33,7 +35,8 @@ Clara, the Cloud Architect, worked closely with all developers, particularly Sit
 
 ## **Monitoring and Alerting**
 - **NFR15:** Azure Monitor and Application Insights must be integrated to track SLIs such as uptime, response times, error rates, and system load.  
-- **NFR16:** Alerts for critical SLIs must notify the relevant teams via **Slack** within **5 minutes** of detection.  
+- **NFR16:** Alerts for critical SLIs must notify the relevant teams via **Slack** within **5 minutes** of detection.
+- **User Story**: https://dev.azure.com/rsagasteguiieu2022/safebank/_backlogs/backlog/safebank%20Team/Epics?workitem=286 
 - 🔴 ***NFR17:** The system must maintain logs for all services in **Azure Log Analytics** with a 90-day retention policy.* **Technical dept**
 - **NFR18:** Dashboards must provide real-time insights into performance metrics, transaction speeds, and error rates.  
 - **NFR19:** Alerts must trigger automated responses, such as scaling or retries, for predictable issues like load surges.  
