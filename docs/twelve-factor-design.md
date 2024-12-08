@@ -1,8 +1,31 @@
 ---
 
-## **SafeBank and 12-Factor App Design** 
-At SafeBank, we are committed to building a scalable, maintainable, and portable platform that adheres to modern application design principles. By aligning with the **12-Factor App methodology** (https://12factor.net/), we ensure that our infrastructure is well-suited for cloud environments, enabling seamless deployment, scaling, and development. Below is how the 12 factors influence and enhance the design of SafeBank:
+# **SafeBank and 12-Factor App Design**
 
+At SafeBank, we are committed to building a **scalable**, **maintainable**, and **portable** platform that adheres to modern application design principles. By aligning with the [**12-Factor App methodology**](https://12factor.net/), we ensure that our infrastructure is well-suited for cloud environments, enabling seamless deployment, scaling, and development.
+
+
+
+
+---
+
+
+Below is a detailed breakdown of how the 12-Factor principles are applied to SafeBank:
+
+| **Factor**            | **Description**                                                                                  | **Application in SafeBank**                                                                                       |
+|------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| **Codebase**          | One codebase tracked in version control, many deployments.                                       | GitHub repositories (frontend, backend, infrastructure) with CI/CD pipelines for seamless deployments.           |
+| **Dependencies**      | Explicitly declare and isolate dependencies.                                                    | Dependencies managed via `npm` for frontend for backend, isolated in containers. |
+| **Config**            | Store configuration in the environment.                                                         | Configurations (e.g., API keys, DB credentials) managed securely via **Azure Key Vault** and injected dynamically. |
+| **Backing Services**  | Treat backing services as attached resources.                                                   | Backing services like **PostgreSQL**, **Key Vault**, and **ACR** are replaceable without code changes.            |
+| **Build, Release, Run** | Strictly separate the build, release, and run stages.                                          | CI/CD workflows enforce separation, ensuring builds are consistent and configuration-specific.                    |
+| **Processes**         | Execute the app as stateless processes.                                                         | Stateless backend/frontend processes deployed in **Azure App Services** with external state storage in PostgreSQL. |
+| **Port Binding**      | Export services via port binding.                                                               | Backend APIs bind to dynamic ports in **App Services for Containers**, allowing flexible communication.           |
+| **Concurrency**       | Scale out via the process model.                                                                | Autoscaling for frontend and backend using **Azure's scaling capabilities** to handle increased load.             |
+| **Disposability**     | Maximize robustness with fast startup and graceful shutdown.                                     | Containers are optimized for rapid startup/shutdown, with rolling updates ensuring zero downtime deployments.      |
+| **Dev/Prod Parity**   | Keep development, staging, and production as similar as possible.                                | Consistent configurations across environments, with differences limited to access permissions.                    |
+| **Logs**              | Treat logs as event streams.                                                                    | Logs aggregated via **Azure Monitor**, **Application Insights**, and **Log Analytics** for actionable insights.   |
+| **Admin Processes**   | Run admin/management tasks as one-off processes.                                                | Database migrations and maintenance tasks executed as isolated CI/CD workflows or Azure CLI commands.             |
 
 ---
 
@@ -94,26 +117,6 @@ At SafeBank, we are committed to building a scalable, maintainable, and portable
 ---
 
 
-
-## **SafeBank and 12-Factor App Design** 🌟  
-Below is a detailed breakdown of how the 12-Factor principles are applied to SafeBank:
-
-| **Factor**            | **Description**                                                                                  | **Application in SafeBank**                                                                                       |
-|------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| **Codebase**          | One codebase tracked in version control, many deployments.                                       | GitHub repositories (frontend, backend, infrastructure) with CI/CD pipelines for seamless deployments.           |
-| **Dependencies**      | Explicitly declare and isolate dependencies.                                                    | Dependencies managed via `npm` for frontend for backend, isolated in containers. |
-| **Config**            | Store configuration in the environment.                                                         | Configurations (e.g., API keys, DB credentials) managed securely via **Azure Key Vault** and injected dynamically. |
-| **Backing Services**  | Treat backing services as attached resources.                                                   | Backing services like **PostgreSQL**, **Key Vault**, and **ACR** are replaceable without code changes.            |
-| **Build, Release, Run** | Strictly separate the build, release, and run stages.                                          | CI/CD workflows enforce separation, ensuring builds are consistent and configuration-specific.                    |
-| **Processes**         | Execute the app as stateless processes.                                                         | Stateless backend/frontend processes deployed in **Azure App Services** with external state storage in PostgreSQL. |
-| **Port Binding**      | Export services via port binding.                                                               | Backend APIs bind to dynamic ports in **App Services for Containers**, allowing flexible communication.           |
-| **Concurrency**       | Scale out via the process model.                                                                | Autoscaling for frontend and backend using **Azure's scaling capabilities** to handle increased load.             |
-| **Disposability**     | Maximize robustness with fast startup and graceful shutdown.                                     | Containers are optimized for rapid startup/shutdown, with rolling updates ensuring zero downtime deployments.      |
-| **Dev/Prod Parity**   | Keep development, staging, and production as similar as possible.                                | Consistent configurations across environments, with differences limited to access permissions.                    |
-| **Logs**              | Treat logs as event streams.                                                                    | Logs aggregated via **Azure Monitor**, **Application Insights**, and **Log Analytics** for actionable insights.   |
-| **Admin Processes**   | Run admin/management tasks as one-off processes.                                                | Database migrations and maintenance tasks executed as isolated CI/CD workflows or Azure CLI commands.             |
-
----
 
 ## **Why 12-Factor Matters for SafeBank**
 By adhering to the **12-Factor App methodology**, SafeBank is designed to be:  
