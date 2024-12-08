@@ -39,7 +39,7 @@ SafeBank's Incident Response Design is for detecting, mitigating, and preventing
 ### 2. Alert Notification
 
 - Slack Integration:
-  - Alerts automatically post to predefined Slack channels (e.g., #SafeBank-Incidents) via Azure Logic Apps
+  - Alerts automatically post to predefined Slack channels (e.g., #security-concerns) via Azure Logic Apps
   - Each alert contains details: description, severity, timestamp, and direct links to diagnostic logs
 
 
