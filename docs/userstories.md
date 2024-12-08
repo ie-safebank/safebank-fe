@@ -44,7 +44,7 @@ Each user story was carefully documented to ensure clarity, alignment, and ease 
 ### **Admin Portal**
 #### **Epic**: Admin Portal
 - **Feature**: Admin Login and User Management
-  - **User Story**: 5
+  - **User Story**: 
     - **Title**: "As an admin, I want the ability to create, update, delete, and reset passwords for bank users with proper error handling."
     - **🛠️ Tasks**:
       - Implement hashing for admin credentials.
@@ -55,6 +55,7 @@ Each user story was carefully documented to ensure clarity, alignment, and ease 
       - Display error messages for invalid inputs.
       - Successful operations display a confirmation message.
     - **📊 Priority**: 1
+    - **Story Points** : 5
 
 ---
 
