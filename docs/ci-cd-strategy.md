@@ -96,8 +96,16 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
   - On pull request to `main`
   - On workflow dispatch
 
-### Build Key Steps 🛠️
+### Build Jobs 🛠️
+  - `build-dev`, `build-uat`, `build-prod`: These jobs automate the process of building the backend application for different environments
 
+| **Aspect**             | **build-dev**                 | **build-uat**                 | **build-prod**                |
+|-------------------------|-------------------------------|--------------------------------|--------------------------------|
+| **Key Vault Name**      | `${{ env.KEY_VAULT_NAME_DEV }}` | `${{ env.KEY_VAULT_NAME_UAT }}` | `${{ env.KEY_VAULT_NAME_PROD }}` |
+| **App Insights Key**    | Retrieved from **dev** Key Vault | Retrieved from **UAT** Key Vault | Retrieved from **prod** Key Vault |
+| **Docker Context Name** | `docker-context-dev`          | `docker-context-uat`          | `docker-context-prod`         |
+
+### Key Steps 🔑
 1. **Checkout**: `actions/checkout@v4`
 
     - It ensures the build workflow has access to the correct version of the codebase
