@@ -2,13 +2,15 @@
 
 ## Test-Driven Development (TDD)
 
-Test-Driven Development (TDD) follows a cycle of:
+- We implemented TDD by follwing this cycle:
 
-1. Write tests 📝
-2. Tests fail ❌
-3. Write code 🧑‍💻
-4. Tests pass ✅
-5. Refactor 🔄
+  1. Write tests 📝
+  2. Tests fail ❌
+  3. Write code 🧑‍💻
+  4. Tests pass ✅
+  5. Refactor 🔄
+
+- Using this method, we made sure that all user acceptance criteria was met and produced high quality code.
 
 ## Behavior-Driven Development (BDD) 🧑‍🤝‍🧑
 
