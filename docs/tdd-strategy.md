@@ -18,16 +18,20 @@
 
 ## Pytest Tests
 
-- Unit and functional tests were developed using **Pytest**, focusing on validating individual components of the system.
+- Unit and functional tests were developed using **Pytest**, focusing on validating individual components of the system. Specifically, the database models and backend routes were tested thoroughly.
+  [See Unit Tests Here](https://github.com/ie-safebank/safebank-be/blob/main/tests/unit/test_model.py)
+  [See Functional Tests Here](https://github.com/ie-safebank/safebank-be/blob/main/tests/functional/test_routes.py)
 
 ## Postman Tests
 
 - Functional tests were expanded using **Postman**, leveraging **Postbot** to validate end-to-end scenarios (e.g., user login, account management, and transaction processing) in the User Acceptance Testing (UAT) environment.
+  [See Postman Tests Here](https://github.com/ie-safebank/safebank-be/blob/main/tests/ci/safebank.postman_collection.json)
 
 ## Integration with CI/CD 🔗
 
 - Postman tests are integrated into the build and deployment workflows.
 - We used GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
+  [See CI/CD documentaton here](ci-cd.strategy.md)
 
 ---
 
