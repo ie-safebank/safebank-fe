@@ -106,6 +106,7 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 | **Docker Context Name** | `docker-context-dev`          | `docker-context-uat`          | `docker-context-prod`         |
 
 ### Key Steps 🔑
+
 1. **Checkout**: `actions/checkout@v4`
 
     - It ensures the build workflow has access to the correct version of the codebase
@@ -113,7 +114,7 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 2. **Set up Python**: `actions/setup-python@v5`
 
     - Configures Python runtime environment, ensuring compatibility with the project's code and dependencies.
-
+  
 3. **Azure Login:**
     - Logs into Azure using azure/login@v2 and credentials stored in AZURE_CREDENTIALS.
 

@@ -62,8 +62,9 @@ Explore the sections below to navigate through the various aspects of our projec
 ---
 
 ### **Software Quality Assurance**
-- [Test Plan](test-plan.md)
-- [Continuous Integration (CI/CD)](ci-cd-strategy.md)
+- [Git Feature Branching Strategy](branching-strategy.md)
+- [Continuous Integration Strategy](ci-cd-strategy.md#ci-strategy)
+- [Continuous Deployment Strategy](ci-cd-strategy.md#cd-strategy)
 - [Test-Driven Development](tdd-strategy.md)
 
 ---

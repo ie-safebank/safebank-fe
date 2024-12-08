@@ -455,6 +455,14 @@ export default {
           }, 3000);
         })
         .catch((error) => {
+          // For message alert
+          this.message = error.message;
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
           console.error(error);
           this.RESTgetAccounts();
         });
@@ -565,6 +573,7 @@ export default {
         .then((response) => {
           this.RESTgetUsers();
           this.RESTgetAccounts();
+          this.RESTgetTransactions();
           // For message alert
           this.message = "User Deleted succesfully!";
           // To actually show the message
@@ -590,6 +599,7 @@ export default {
       this.createAccountForm.name = "";
       this.createAccountForm.currency = "";
       this.createAccountForm.username = "";
+      this.createAccountForm.country = "";
       this.editAccountForm.id = "";
       this.editAccountForm.name = "";
       this.editAccountForm.country = "";
