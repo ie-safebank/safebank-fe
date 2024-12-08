@@ -36,18 +36,13 @@ Explore the sections below to navigate through the various aspects of our projec
 - **General System Description**
   - [Release Strategy](release-strategy.md)
   - [Infrastructure Architecture Design & Environments Design](infrastructure-architecture.md)
+  - [Well-Architected Framework](well-archi.md)
 - **Software Modeling**
   - [Use Case](use-case-model.md)
   - [Sequential Models](sequential.md)
   - [Entity Relationship Diagram](entity-relationship-diagram.md)
   - [Data Flow Diagram](data-flow-diagram.md)
   - [12-Factor App Design](twelve-factor-design.md)
-- **Well-Architected Framework**
-  - [Reliability](reliability.md)
-  - [Security](security.md)
-  - [Cost Optimization](cost-optimization.md)
-  - [Operational Excellence](operational-excellence.md)
-  - [Performance Efficiency](performance-efficiency.md)
 
 ---
 
