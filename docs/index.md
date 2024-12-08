@@ -55,7 +55,6 @@ Explore the sections below to navigate through the various aspects of our projec
 ### **Agile Practices**
 
 - [Scrum Methodology](scrum-methodology.md)
-  - [Overview of Our Scrum Strategy](scrum-methodology.md#overview-of-our-scrum-strategy)
   - [Product Backlog](scrum-methodology.md#product-backlog)
   - [Sprint Planning and Execution](scrum-methodology.md#sprint-planning-and-execution)
   - [Sprint Review and Retrospective](scrum-methodology.md#sprint-review-and-retrospective)
