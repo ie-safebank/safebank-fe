@@ -109,3 +109,17 @@ Each functional requirement in this document was thoughtfully designed with a **
 
 ### **Form Validation**  
 - **FR28:** All forms in the admin portal (e.g., user creation, updating information) must include basic validation to ensure all required fields are filled before submission.
+
+## **FR to User Story Mapping**
+
+| **Functional Requirement (FR)** | **Linked User Story**                                                                                                           |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| **FR1–FR7**                     | As a cybersecurity engineer, I want to securely store sensitive credentials in Azure Key Vault.                                 |
+| **FR8–FR11**                    | As an SRE, I want to monitor application health using Application Insights.                                                     |
+| **FR12–FR17**                   | As an SRE, I want to set up alerting rules for key SLIs, so that I can be notified immediately when performance thresholds are breached. |
+| **FR18**                        | As a cybersecurity I want to implement GitHub Advanced Security features, such as secret scanning, push protection, dependency analysis, and CodeQL. |
+| **FR19–FR28**                   | As a Site Reliability Engineer, I want to automate the generation and distribution of weekly and monthly reports.              |
+
+---
+
+This table provides clear traceability between the functional requirements and user stories, helping teams align implementation with user needs and stakeholder priorities.
