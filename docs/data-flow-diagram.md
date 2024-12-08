@@ -1,28 +1,35 @@
 # 🚀 **SafeBank Data Flow Description**
 ![Data Flow Diagram](images/dataflow.png)
 
-This data flow diagram illustrates the interactions between **Users** 👤, **Admin** 🛠️, and the system's backend processes to handle key functionalities like user registration, account management, transactions, and administrative actions.
+This data flow diagram follows the standard rules of a Data Flow Diagram (DFD):
+- 🟦 **Squares** represent external entities (e.g., Users, Admins).
+- 🟢 **Circles** represent processes or actions performed within the system.
+- 📄 **Parallel lines** represent data stores (e.g., User Data, Accounts Data, Transactions Data).
+- 🔄 **Arrows** indicate the flow of data between entities, processes, and data stores.
+
+The diagram demonstrates how data moves through the system while maintaining clarity and simplicity.
+
 
 ---
 
 ## 🌟 **1. Users' Interactions**
 ### 👤 **1.1 User Registration**
-- **📋 Process**: Users initiate the registration process.
-- **✅ Validation**: Submitted data undergoes a validation process to ensure accuracy and completeness.
-- **🎉 Outcome**: Successful validation results in account creation and storage of user data.
+- **Process**: Users initiate the registration process.
+- **Validation**: Submitted data undergoes a validation process to ensure accuracy and completeness.
+- **Outcome**: Successful validation results in account creation and storage of user data.
 
 ### 🔐 **1.2 User Login**
-- **📋 Process**: Users input their credentials to log in.
-- **✅ Validation**: Credentials are validated against the stored user data.
-- **🎉 Outcome**: Successful login grants users access to their accounts and the ability to initiate transactions.
+- **Process**: Users input their credentials to log in.
+- **Validation**: Credentials are validated against the stored user data.
+- **Outcome**: Successful login grants users access to their accounts and the ability to initiate transactions.
 
 ### 🗂️ **1.3 View Accounts**
-- **📋 Process**: Logged-in users can view their account details.
-- **📚 Data Source**: Account data retrieved from the system database.
+- **Process**: Logged-in users can view their account details.
+- **Data Source**: Account data retrieved from the system database.
 
 ### 💸 **1.4 Transactions**
-- **📋 Process**: Users can initiate transactions from their accounts.
-- **🔍 Transaction Validation**:
+- **Process**: Users can initiate transactions from their accounts.
+- **Transaction Validation**:
   - Ensures the transaction complies with the system rules (e.g., sufficient funds).
   - Valid transactions are processed and stored in the transactions database.
 
@@ -30,20 +37,20 @@ This data flow diagram illustrates the interactions between **Users** 👤, **Ad
 
 ## 🛠️ **2. Admin's Interactions**
 ### 🔐 **2.1 Admin Login**
-- **📋 Process**: Admins log in using hashed credentials.
-- **✅ Validation**: The system verifies admin credentials against stored admin data.
-- **🎉 Outcome**: Successful login enables access to administrative functionalities.
+- **Process**: Admins log in using hashed credentials.
+- **Validation**: The system verifies admin credentials against stored admin data.
+- **Outcome**: Successful login enables access to administrative functionalities.
 
 ### 📂 **2.2 Administrative Functions**
 Admin tasks include:
-- **👥 List Users**: Retrieve and display user details.
-- **❌ User Deletion**: Remove a user from the system.
-- **✏️ User Edit**: Update user details.
-- **➕ User Creation**: Manually create a new user account.
+- **List Users**: Retrieve and display user details.
+- **User Deletion**: Remove a user from the system.
+- **User Edit**: Update user details.
+- **User Creation**: Manually create a new user account.
 
 #### 🔒 **Data Handling**:
 - Admin actions are validated and logged for security.
-- Changes affect the respective user data or accounts data stored in the system.
+- Changes affect the respective accounts data stored in the system.
 
 ---
 
