@@ -41,9 +41,7 @@ SafeBank's Incident Response Design is for detecting, mitigating, and preventing
 - Slack Integration:
   - Alerts automatically post to predefined Slack channels (e.g., #SafeBank-Incidents) via Azure Logic Apps
   - Each alert contains details: description, severity, timestamp, and direct links to diagnostic logs
-- ITSM Ticket Creation:
-  - Critical incidents automatically create tickets in ITSM tools like ServiceNow or Jira
-  - The tickets are assigned to relevant teams based on predefined escalation policies
+
 
 ### 3. Incident Analysis
 
