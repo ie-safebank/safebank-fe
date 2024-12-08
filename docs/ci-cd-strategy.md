@@ -31,13 +31,11 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
 
 - `build-dev`, `build-uat`, `build-prod`: These jobs automate the process of building the frontend application for different environments
 
-| **Aspect**            | **`build-dev`**           | **`build-uat`**          | **`build-prod`**         |
-| --------------------- | ------------------------- | ------------------------ | ------------------------ |
-| **Environment File**  | `.env.development`        | `.env.uat`               | `.env.prod`              |
-| **Build Output**      | `dist-dev/`               | `dist-uat/`              | `dist-prod/`             |
-| **Optimization**      | Minimal                   | Moderate                 | Maximum                  |
-| **Debug Information** | Included                  | Limited                  | Removed                  |
-| **Purpose**           | Local development/testing | Stakeholder/user testing | Deployment for end-users |
+| **Aspect**           | **`build-dev`**           | **`build-uat`**          | **`build-prod`**         |
+| -------------------- | ------------------------- | ------------------------ | ------------------------ |
+| **Environment File** | `.env.development`        | `.env.uat`               | `.env.prod`              |
+| **Build Output**     | `dist-dev/`               | `dist-uat/`              | `dist-prod/`             |
+| **Purpose**          | Local development/testing | Stakeholder/user testing | Deployment for end-users |
 
 #### Key Steps
 
