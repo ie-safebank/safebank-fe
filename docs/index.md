@@ -58,12 +58,13 @@ Explore the sections below to navigate through the various aspects of our projec
 - [DevOps Practices](devops-practices.md)
 - [Scrum Methodology](scrum-methodology.md)
 - [Collaboration Strategy](collaboration-strategy.md)
-- [Git Feature Branching Strategy](branching-strategy.md)
 
 ---
 
 ### **Software Quality Assurance**
-- [Continuous Integration (CI/CD)](ci-cd-strategy.md)
+- [Git Feature Branching Strategy](branching-strategy.md)
+- [Continuous Integration Strategy](https://github.com/ie-safebank/safebank-fe/blob/main/docs/ci-cd-strategy.md#ci-strategy)
+- [Continuous Deployment Strategy](https://github.com/ie-safebank/safebank-fe/blob/main/docs/ci-cd-strategy.md#cd-strategy)
 - [Test-Driven Development](tdd-strategy.md)
 
 ---
