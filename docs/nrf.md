@@ -23,17 +23,18 @@ Clara, the Cloud Architect, worked closely with all developers, particularly Sit
 ---
 
 ## **Scalability**
-- ***NFR11:** The system must support **double the average load** during peak traffic periods without degradation.* *Technical dept*
-- ***NFR12:** Auto-scaling must be configured for all Azure App Services and databases based on **CPU utilization** and **request rates**.* *Technical dept*
-- ***NFR13:** The system must allow for horizontal scaling of frontend and backend components without downtime.* *Technical dept*
-- ***NFR14:** Traffic must be distributed geographically using **Azure Front Door** to optimize latency and performance.* *Technical dept*  
+- 🔴 ***NFR11:** The system must support **double the average load** during peak traffic periods without degradation.* **Technical debt**
+- 🔴 ***NFR12:** Auto-scaling must be configured for all Azure App Services and databases based on **CPU utilization** and **request rates**.* **Technical debt**
+- 🔴 ***NFR13:** The system must allow for horizontal scaling of frontend and backend components without downtime.* **Technical debt**
+- 🔴 ***NFR14:** Traffic must be distributed geographically using **Azure Front Door** to optimize latency and performance.* **Technical debt**
+
 
 ---
 
 ## **Monitoring and Alerting**
 - **NFR15:** Azure Monitor and Application Insights must be integrated to track SLIs such as uptime, response times, error rates, and system load.  
 - **NFR16:** Alerts for critical SLIs must notify the relevant teams via **Slack** within **5 minutes** of detection.  
-- ***NFR17:** The system must maintain logs for all services in **Azure Log Analytics** with a 90-day retention policy.* *Technical dept*  
+- 🔴 ***NFR17:** The system must maintain logs for all services in **Azure Log Analytics** with a 90-day retention policy.* **Technical dept**
 - **NFR18:** Dashboards must provide real-time insights into performance metrics, transaction speeds, and error rates.  
 - **NFR19:** Alerts must trigger automated responses, such as scaling or retries, for predictable issues like load surges.  
 
