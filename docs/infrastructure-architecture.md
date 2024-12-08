@@ -86,13 +86,13 @@ While the core architecture remains consistent across environments, permissions 
 ### **UAT Environment**  
 - 🛠️ **UAT** bridges the gap between development and production. It mimics production as closely as possible, enabling rigorous functional testing.  
 - Here, we execute **functional tests** using tools like **Postman** to validate APIs and ensure readiness for deployment.  
-- Access is more restrictive, with contributors focused on testing rather than modifying resources.
+- Access is more restrictive, with students being **readers** and only contributors for workbooks, focused on testing rather than modifying resources.
 
 ---
 
 ### **Production Environment**  
 - In **Production**, stability and security are paramount.  
-- Permissions are restricted to minimize risks, with only essential contributors granted access.  
+- **Permissions are restricted** to minimize risks, with only essential contributors granted access.  
 - Monitoring is enhanced to include **real-time alerts** and **in-depth diagnostics**, ensuring uninterrupted service for our users.
 
 ---
