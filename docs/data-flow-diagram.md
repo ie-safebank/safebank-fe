@@ -12,7 +12,7 @@ The diagram demonstrates how data moves through the system while maintaining cla
 
 ---
 
-## 🌟 **1. Users' Interactions**
+## **1. Users' Interactions**
 ### 👤 **1.1 User Registration**
 - **Process**: Users initiate the registration process.
 - **Validation**: Submitted data undergoes a validation process to ensure accuracy and completeness.
@@ -35,7 +35,7 @@ The diagram demonstrates how data moves through the system while maintaining cla
 
 ---
 
-## 🛠️ **2. Admin's Interactions**
+## **2. Admin's Interactions**
 ### 🔐 **2.1 Admin Login**
 - **Process**: Admins log in using hashed credentials.
 - **Validation**: The system verifies admin credentials against stored admin data.
@@ -69,7 +69,7 @@ Admin tasks include:
 
 ---
 
-## 📝 **4. System Flow Summary**
+## **4. System Flow Summary**
 1. 🧑‍💻 **Users and admins interact** with the system through login and specific operations.
 2. 🔍 **Data validation ensures** the accuracy and integrity of every process.
 3. 📂 **Key data** (e.g., user accounts and transactions) is securely stored and updated based on system actions.
