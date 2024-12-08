@@ -10,24 +10,24 @@
   4. Tests pass ✅
   5. Refactor 🔄
 
-- Using this method, we made sure that all user acceptance criteria was met and produced high quality code.
+- Using this method, we made sure that all user acceptance criteria was met and efficiently produced high quality code.
 
 ## Behavior-Driven Development (BDD) 🧑‍🤝‍🧑
 
-- We defined system behaviors in clear scenarios using the "Given, When, Then" format. This approach improved communication between developers and non-technical stakeholders, ensuring everyone had a shared understanding of the system's behavior.
+- We defined system behaviors in clear scenarios using the "Given, When, Then" format. This approach improved communication between the team and stakeholders ensuring everyone had a shared understanding of the system's behavior.
 
-## Unit Tests
+## Pytest Tests
 
-- Unit tests were developed using **Pytest**, focusing on validating individual components of the system.
+- Unit and functional tests were developed using **Pytest**, focusing on validating individual components of the system.
 
-## Functional Tests
+## Postman Tests
 
-- Functional tests were expanded using **Postman**, with **Postbot** utilized to validate end-to-end scenarios (e.g., user login, account management, and transaction processing) in the User Acceptance Testing (UAT) environment.
+- Functional tests were expanded using **Postman**, leveraging **Postbot** to validate end-to-end scenarios (e.g., user login, account management, and transaction processing) in the User Acceptance Testing (UAT) environment.
 
 ## Integration with CI/CD 🔗
 
-- Functional tests are integrated into the build and deployment workflows. We use GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
-- This integration ensures high-quality code throughout the development lifecycle, from development to deployment.
+- Postman tests are integrated into the build and deployment workflows.
+- We used GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
 
 ---
 
