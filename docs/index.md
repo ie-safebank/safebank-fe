@@ -86,7 +86,7 @@ Explore the sections below to navigate through the various aspects of our projec
 ### **Infrastructure**
 - [Infrastructure as Code (IaC)](iac-strategy.md)
 - [Azure Services Configuration](azure-services.md)
-- [Bicep Modularization](bicep-modularization.md)
+- [Infrastructure Release Strategy](infrastructure-release-strategy.md)
 
 ---
 
