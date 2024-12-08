@@ -22,7 +22,6 @@ Explore the sections below to navigate through the various aspects of our projec
 - [Product Vision and Mission](product-vision-mission.md)
 - [MVP & Requirements](mvp.md)
 - [Product Roadmap](roadmap.md)
-- [Collaboration Strategy](collaboration.md)
 - [Objectives and Key Results (OKRs)](okrs.md)
 
 ---
@@ -30,6 +29,7 @@ Explore the sections below to navigate through the various aspects of our projec
 ### **Requirements**
 - ⁠[Functional Requirements](functional-requirements.md)
 - [Non-Functional Requirements](nrf.md)
+
 ---
 
 ### **System Design**
