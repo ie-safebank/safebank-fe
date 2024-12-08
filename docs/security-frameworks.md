@@ -23,8 +23,6 @@ IE-Safebank monitors its dependencies through DependaBot. DependaBot is a tool d
 - **Address Vulnerabilities Effectively**  
   While we prioritize fixing high and critical vulnerabilities, due to time constraints, 'high', ‘medium’ and ‘low’ dependency alerts were not addressed during the initial implementation. This approach helps ensure resources are focused on addressing the most significant risks.
 
-- **Keep Dependencies Up-to-Date**  
-  Having dependencies up-to-date is critical for preventing potential exploits. Outdated libraries are often targeted by attackers for eavesdropping, cross-site scripting (XSS), and other attacks. Dependabot ensures libraries are regularly reviewed and updated to mitigate these risks.
 
 ### 3. Keep Dependencies Reasonably Up-to-Date
 Dependabot is an invaluable tool for technical purposes; however, it tends to overlook the human-centric aspects of its functionality. Dependabot’s alerts are restricted to notifications shown on the security panel in a GitHub repository. To address this, the Cyber Security engineer at IE-Safebank connected Dependabot’s alerts to a Slack channel in order to notify the developer of the risk. Furthermore, in the Dependabot’s configuration, Cyber Security has activated ‘Dependabot security updates,’ which automatically opens a pull request whenever a weakness is identified.
