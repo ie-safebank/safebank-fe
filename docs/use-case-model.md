@@ -4,14 +4,14 @@
 
 ---
 
-## 🧑‍🤝‍🧑 **Actors**
+## **Actors**
 - **👤 User**: Represents the bank customer who interacts with the banking system through a frontend application.
 - **🛠️ Admin**: Represents the bank's administrator responsible for managing user accounts and performing backend operations.
 - **💻 Bank Backend**: Represents the backend system that processes and stores all the banking operations.
 
 ---
 
-## 🌟 **Use Cases for the User**
+## **Use Cases for the User**
 
 ### 1. 🔑 Sign up
 - **Description**: Allows new users to create an account.
@@ -35,7 +35,7 @@
 
 ---
 
-## 🌟 **Use Cases for the Admin**
+## **Use Cases for the Admin**
 
 ### 1. 🔐 Admin Login
 - **Description**: Allows administrators to access the system backend.
@@ -57,7 +57,7 @@
 
 ---
 
-## 🔄 **System Interactions**
+## **System Interactions**
 
 ### 1. 💵 Update Balance
 - **Description**: Used when the user performs a transfer to ensure account balances are updated on the backend.
