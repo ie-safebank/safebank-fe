@@ -31,7 +31,7 @@
 
 - Postman tests are integrated into the build and deployment workflows.
 - We used GitHub status checks to ensure that only pull requests passing all tests can be merged into the main branch.
-  [See CI/CD documentaton here](ci-cd.strategy.md)
+  [See CI/CD documentaton here](ci-cd-strategy.md)
 
 ---
 
