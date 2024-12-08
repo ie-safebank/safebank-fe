@@ -26,19 +26,41 @@ This section details the key design decisions made in collaboration with experts
 ---
 
 ### **2. Security**
-**Protecting sensitive data and ensuring secure access.**
+**Ensuring secure access and protecting sensitive data.**
 
 - **Collaborator**: Cybersecurity Engineer
-- **Key Principles**:
-  - **Key Vault Integration**:
-    - Azure Key Vault secures sensitive credentials (e.g., database keys, API tokens).
-    - All secrets are accessed securely via CI/CD workflows, ensuring no credentials are exposed in repositories.
-  - **Role-Based Access Control (RBAC)**:
-    - Resource permissions are defined using **Azure RBAC**, ensuring only authorized personnel can access critical systems.
-  - **Encryption**:
-    - Data at rest is encrypted using Azure-managed keys, while **TLS** encrypts data in transit.
-  - **Secure Deployment**:
-    - Backend and frontend deployments follow secure workflows, using secrets managed by Azure Key Vault.
+
+SafeBank employs robust security measures to protect its systems and data, leveraging tools and best practices to prevent vulnerabilities.
+
+#### **Key Implementations**
+1. **Secret Management**:
+   - Configured **GitHub Secret Scanning** and **Push Protection** to prevent accidental inclusion of sensitive data in repositories.
+   - Secured **Container Registry** and **PostgreSQL credentials** in **Azure Key Vault**.
+
+2. **Code and Dependency Security**:
+   - Implemented **CodeQL** for automated vulnerability detection in frontend (Vue.js) and backend (Python) code.
+   - Enabled **Dependabot** for dependency updates and **Dependency Reviews** to assess security risks.
+
+3. **Access Control**:
+   - Used **CODEOWNERS** to ensure domain experts review critical code changes.
+   - Applied **Role-Based Access Control (RBAC)** to limit resource access to authorized personnel.
+
+4. **Security Posture Improvement**:
+   - Integrated **OSSF Scorecard** to enhance repository security practices.
+
+
+#### **Security Workflow**
+
+| **Workflow**              | **Description**                                                                                     |
+|----------------------------|-----------------------------------------------------------------------------------------------------|
+| **Code Scanning**          | CodeQL scans are triggered on every pull request and commit to identify vulnerabilities proactively. |
+| **Dependency Management**  | Dependabot monitors dependencies and automatically submits pull requests for updates.              |
+| **Secret Management**      | Push Protection prevents secrets from being committed. Alerts for bypasses are reviewed promptly.  |
+
+---
+
+By combining automated tools like **GitHub Advanced Security**, **CodeQL**, **Dependabot**, and **Key Vault**, SafeBank ensures a robust, proactive, and secure development environment. These measures reflect the highest standards of cybersecurity, protecting both the organization and its customers.
+
 
 ---
 
@@ -92,13 +114,16 @@ This section details the key design decisions made in collaboration with experts
 
 ## 📊 **Summary Table of Design Decisions**
 
-| **Pillar**              | **Key Design Decisions**                                                                                                                                       | **Collaborators**                           |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
-| **Reliability**          | CI/CD pipelines, geo-replication, containerized services, proactive monitoring, chaos simulations.                                                           | Site Reliability Engineer                  |
-| **Security**             | Key Vault for credentials, RBAC, encryption at rest and in transit, secure CI/CD workflows.                                                                 | Cybersecurity Engineer                     |
-| **Performance Efficiency** | Auto-scaling backend, Azure CDN for frontend, real-time monitoring, load testing.                                                                            | Infrastructure Developer, Site Reliability Engineer |
-| **Operational Excellence** | Automated CI/CD pipelines, modular templates, centralized logging, proactive alerts.                                                                        | Full Stack Developer                       |
-| **Cost Optimization**    | Pay-as-you-go, cost monitoring with Azure Monitor, modular resource deployments, auto-scaling.                                                               | Infrastructure Developer                   |
+| **Pillar**              | **Key Design Decisions**                                                                                                                      | **Collaborators**                           |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| **Reliability**          | CI/CD pipelines, geo-replication, containerized services, proactive monitoring, chaos simulations.                                           | Site Reliability Engineer                  |
+| **Security**             | Secret scanning, push protection, Key Vault for credentials, CodeQL for code scanning, Dependabot for dependency updates, RBAC for access control. | Cybersecurity Engineer                     |
+| **Performance Efficiency** | Auto-scaling backend, Azure CDN for frontend, real-time monitoring, load testing.                                                           | Infrastructure Developer, Site Reliability Engineer |
+| **Operational Excellence** | Automated CI/CD pipelines, modular templates, centralized logging, proactive alerts.                                                       | Full Stack Developer                       |
+| **Cost Optimization**    | Pay-as-you-go, cost monitoring with Azure Monitor, modular resource deployments, auto-scaling.                                               | Infrastructure Developer                   |
+
+---
+
 
 ---
 
