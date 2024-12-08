@@ -2,24 +2,8 @@
 
 This section outlines the continuous integration (CI) strategy implemented at SafeBank.
 
-## Git Feature Branching Strategy 🌳
-
-- **Github Branch Protection Rules** 🔒
-
-  - Require a pull request before merging to `main`
-  - Require at least one code review approval before merging
-  - Ensure passing status checks from CI pipelines before integration
-
-- **Feature Branches**
-
-  - Use short-lived feature branches for developing bug fixes and new features
-  - Maintain mutual agreement among the team on branch naming conventions and processes to avoid confusion and conflicts
-
-- **Collaboration and Communication** 🧑‍💻👩‍💻
-  - Constant communication among developers
-  - Frequent check-ins with `main`
-
 ## Frontend CI Workflow
+[See the workflow here](https://github.com/ie-safebank/safebank-fe/blob/main/.github/workflows/safebank-staticweb-frontend.yml)
 
 ### Trigger Events
 
@@ -54,6 +38,8 @@ This section outlines the continuous integration (CI) strategy implemented at Sa
     - Packages the build output as an artifact and uploads it for use in later workflow steps or jobs
 
 ## Backend CI Workflow
+
+[See the workflow here](https://github.com/ie-safebank/safebank-be/blob/main/.github/workflows/safebank-docker-backend.yml)
 
 ### Trigger Events
 
