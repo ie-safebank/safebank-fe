@@ -69,6 +69,7 @@ Explore the sections below to navigate through the various aspects of our projec
 - [Monitoring Strategy](monitoring-strategy.md)
 - [Incident Response Through ChatOps](incident-response.md)
 - [Service Level Agreements (SLAs)](sla.md)
+- [Site Reliability Engineer Design](site-reliability-engineer-design.md)
 
 ---
 
